@@ -1,0 +1,19 @@
+{
+  "name": "nickzuber.com",
+  "version": "1.0.0",
+  "description": "Personal website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nickzuber/ssg-nickzuber.com.git"
+  },
+  "author": "Nick Zuber <zuber.nicholas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nickzuber/ssg-nickzuber.com/issues"
+  },
+  "homepage": "https://github.com/nickzuber/ssg-nickzuber.com#readme"
+}
