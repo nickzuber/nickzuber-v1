@@ -1,0 +1,23 @@
+# Site settings
+title: Nick Zuber | Software Engineer
+email: zuber.nicholas@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Nick Zuber is a sofware engineer for the web.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://nickzuber.com" # the base hostname & protocol for your site
+twitter_username: nick_zuber
+github_username:  nickzuber
+
+job_title: Software Engineer Intern
+job_place: Robin
+
+permalink: /:categories/:title
+
+# Build settings
+markdown: Redcarpet
+source: src
+destination: public
+
+exclude:
+- node_modules
+- package.json
