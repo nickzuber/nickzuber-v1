@@ -1,0 +1,8 @@
+<div class="top-banner">
+  {% if page.permalink != "/" %}
+    <a href="/">Home</a>
+  {% endif %}
+  <a href="#">GitHub</a>
+  <a href="#">StackOverflow</a>
+  <a class="showcase-link" href="{{ "/blog/" | prepend: site.baseurl }}">Blog</a>
+</div>
