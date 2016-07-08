@@ -8,6 +8,9 @@ url: "http://nickzuber.com" # the base hostname & protocol for your site
 twitter_username: nick_zuber
 github_username:  nickzuber
 
+job_title: Software Engineer Intern
+job_place: Robin
+
 permalink: /:categories/:title
 
 # Build settings
