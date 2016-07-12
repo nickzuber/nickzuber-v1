@@ -1,0 +1,15 @@
+<script>
+  (function(){
+    var generateInfinateOrb = function() {
+      var node = document.createElement('div');
+      node.classList = 'pulse-orb -emitting';
+      document.querySelector('.primary-image').appendChild(node);
+    }
+    window.startEmitting = function(){
+      generateInfinateOrb();
+      setTimeout(function(){
+        generateInfinateOrb();
+      }, 2000);
+    };
+  })();
+</script>
