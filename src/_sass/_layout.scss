@@ -20,9 +20,7 @@
 
 .top-banner a {
   font-size: $small-font-size;
-  font-weight: 300;
   padding: 8px 12px;
-  letter-spacing: .25px;
 }
 
 a.showcase-link {
@@ -38,6 +36,41 @@ a.showcase-link {
 /**
  * Page content
  */
+
+.header-section {
+  text-align: center;
+}
+
+.primary-image {
+  background: url(../img/profile.jpg) 50% no-repeat;
+  display: block;
+  position: relative;
+  margin: 0 auto 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.primary-header {
+  font-weight: 600;
+  letter-spacing: -2px;
+  font-size: 3em;
+  color: #222;
+  text-align: center;
+}
+
+.secondary-header {
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #aaa;
+  margin-top: 10px;
+
+  .place {
+    color: $contrast-color;
+  }
+}
+
 .page-content {
     padding: $spacing-unit 0;
 }

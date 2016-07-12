@@ -3,11 +3,8 @@
 ---
 @charset "utf-8";
 
-
-
 // Core variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$base-font-style:  16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
 $small-font-size:  13px;
 $base-font-weight: 400;
 $base-line-height: 1.5;
@@ -18,6 +15,7 @@ $text-color:       #111;
 $background-color: #fefefe;
 $brand-color:      #2cb673;
 $secondary-color:  #5badf0;
+$contrast-color:   #EB298C;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -29,7 +27,12 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-
+@mixin transitions($timing: 500ms) {
+  -webkit-transition: all $timing cubic-bezier(0.23,1,0.32,1);
+  -moz-transition: all $timing cubic-bezier(0.23,1,0.32,1);
+  -o-transition: all $timing cubic-bezier(0.23,1,0.32,1);
+  transition: all $timing cubic-bezier(0.23,1,0.32,1);
+}
 
 // Use media queries like this:
 // @include media-query($on-palm) {
