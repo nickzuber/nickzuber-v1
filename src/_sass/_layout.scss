@@ -22,16 +22,15 @@
   color: $gray;
   display: inline-block;
   vertical-align: middle;
-  margin: 30px 15px;
+  margin: 30px 10px;
 }
 
 .top-banner a.adjust-margin {
-  margin: 15px !important;
+  margin: 10px !important;
 }
 
 a.white {
   color: #fff;
-  margin: 15px 30px 15px 15px;
 }
 
 
@@ -57,6 +56,10 @@ a.white {
   margin-bottom: 20px;
   cursor: pointer;
   @include transitions;
+
+  &:active {
+    transform: scale(.9);
+  }
 }
 
 .pulse-orb {
@@ -83,7 +86,7 @@ a.white {
   font-size: 1.4em;
   font-weight: 400;
   color: #aaa;
-  margin-top: 5px;
+  margin: 5px 0 40px;
   letter-spacing: 0;
 
   .place {
@@ -92,77 +95,90 @@ a.white {
   }
 }
 
-.page-content {
-    padding: $spacing-unit 0;
+$default-width: 520px;
+
+.home {
+  padding: 50px 0 0;
+  width: $default-width;
+  position: relative;
+  margin: 0 auto;
+  border-top: 1px solid $border-gray;
+}
+.footer {
+  width: $default-width;
+  position: relative;
+  margin: 25px auto 0;
+  padding: 40px 0 0;
+  border-top: 1px solid $border-gray;
+
+  p {
+    color: $byline-gray;
+    opacity: .8;
+    font-size: 14px;
+  }
 }
 
-.page-heading {
-    font-size: 20px;
+@media (max-width: 560px) {
+  .home, .footer {
+    width: 100% !important;
+  }
 }
 
-.post-list {
-    margin-left: 0;
-    list-style: none;
+.category-item {
+  margin: 0  auto;
+  display: table-row;
+  text-align: left;
+  width: 100%;
 
-    > li {
-        margin-bottom: $spacing-unit;
-    }
-}
+  p, a {
+    font-size: 16px;
+    line-height: 25px;
+  }
 
-.post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
-}
+  /* Work around for being unable to add margins to tabel-* elements */
+  p {
+    margin-bottom: 50px;
+  }
+  h3 {
+    margin-top: 25px;
+  }
 
-.post-link {
-    display: block;
-    font-size: 24px;
-}
+  .icon-container {
+    display: table-cell;
+    width: 100px;
 
-
-
-/**
- * Posts
- */
-.post-header {
-    margin-bottom: $spacing-unit;
-}
-
-.post-title {
-    font-size: 42px;
-    letter-spacing: -1px;
-    line-height: 1;
-
-    @include media-query($on-laptop) {
-        font-size: 36px;
-    }
-}
-
-.post-content {
-  margin-top: 50px;
-  margin-bottom: $spacing-unit;
-
-    h2 {
-        font-size: 32px;
-
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
-    }
-
-    h3 {
-        font-size: 26px;
-
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
+    .icon {
+      background-color: $red;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: cover;
+      height: 70px;
+      width: 70px;
+      border-radius: 100%;
+      position: absolute;
+      top: 25px;
     }
 
-    h4 {
-        font-size: 20px;
-
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
+    .-heart {
+      background-image: url(../img/heart.png);
+      background-color: transparent;
     }
+    .-laptop {
+      background-image: url(../img/laptop.png);
+      background-color: transparent;
+    }
+    .-pencil {
+      background-image: url(../img/pencil.png);
+      background-color: transparent;
+    }
+    .-social {
+      background-image: url(../img/social.png);
+      background-color: transparent;
+    }
+  }
+
+  .content {
+    display: table-cell;
+  }
 }
+
