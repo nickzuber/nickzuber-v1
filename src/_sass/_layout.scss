@@ -7,7 +7,6 @@
   background: none;
   display: block;
   position: relative;
-  padding: 10px;
   text-align: right;
   box-sizing: border-box;
 }
@@ -20,16 +19,19 @@
 
 .top-banner a {
   font-size: $small-font-size;
-  padding: 8px 12px;
+  color: $gray;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 30px 15px;
 }
 
-a.showcase-link {
-  display: inline-block;
+.top-banner a.adjust-margin {
+  margin: 15px !important;
+}
+
+a.white {
   color: #fff;
-  margin: 5px;
-  margin-left: 10px;
-  background: $secondary-color;
-  border-radius: 3px;
+  margin: 15px 30px 15px 15px;
 }
 
 
@@ -49,21 +51,22 @@ a.showcase-link {
   display: block;
   position: relative;
   margin: 0 auto 10px;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   margin-bottom: 20px;
+  cursor: pointer;
   @include transitions;
 }
 
 .pulse-orb {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -40px;
+  margin-left: -50px;
   z-index: -1;
 }
 
@@ -71,18 +74,21 @@ a.showcase-link {
   font-weight: 600;
   letter-spacing: -2px;
   font-size: 3em;
+  margin: 0;
   color: #222;
   text-align: center;
 }
 
 .secondary-header {
   font-size: 1.4em;
-  font-weight: 300;
+  font-weight: 400;
   color: #aaa;
-  margin-top: 10px;
+  margin-top: 5px;
+  letter-spacing: 0;
 
   .place {
-    color: $contrast-color;
+    color: $red;
+    font-weight: 500;
   }
 }
 
