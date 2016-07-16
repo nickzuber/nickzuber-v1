@@ -2,14 +2,59 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
+@import 'https://fonts.googleapis.com/css?family=Inconsolata';
 
 // Core variables
-$base-font-style:  16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-style:  15px/1 "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 $small-font-size:  13px;
-$base-font-weight: 400;
-$base-line-height: 1.5;
+$base-font-weight: 300;
+$base-line-height: 21px;
 
+$mono-font:        15px/1 'Inconsolata', monospace !important;
 $spacing-unit:     30px;
+
+// Colors
+
+$dark-red: #EB3349;
+$red: #EE3F46;
+$light-red: #F26D73;
+$pale-red: #FCE4E5;
+
+$dark-orange: #F45D43;
+$orange: #FD4B46;
+$light-orange: #F7AA86;
+$pale-orange: #FDEEE6;
+
+$dark-yellow: #F48700;
+$yellow: #FFB150;
+$light-yellow: #FFC274;
+$pale-yellow: #FEE9CE;
+
+$dark-green: #4AB223;
+$green: #91CA55;
+$light-green: #90D079;
+$pale-green: #E1F6DA;
+
+$dark-blue: #2D99D3;
+$blue: #5EBEFF;
+$light-blue: #c1eaff;
+$pale-blue: #E1F5FF;
+
+$dark-purple: #604788;
+$purple: #8E45A5;
+$light-purple: #B275C5;
+$pale-purple: #F7E2FE;
+
+$dark-navy: #252A2E;
+$navy: #32383E;
+$light-navy: #9CAFBE;
+$pale-navy: #D2DAE1;
+
+$gray: #666666;
+$byline-gray: #999999;
+$border-gray: #DDDDDD;
+$border-alt: #EBEBEB;
+$background-gray: #F4F6F9;
 
 $text-color:       #111;
 $background-color: #fefefe;
@@ -53,5 +98,6 @@ $on-laptop:        800px;
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
+        "robinstrap"
 ;

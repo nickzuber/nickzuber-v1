@@ -15,8 +15,8 @@ dl, dd, ol, ul, figure {
  */
 body {
     font: $base-font-style;
-    color: $text-color;
-    background-color: $background-color;
+    color: $gray;
+    background-color: $background-gray;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
@@ -45,6 +45,20 @@ body {
 @keyframes emitting {
   0% {
     opacity: 1;
+    box-shadow: 0 0 0 0 $red, 0 0 0 0 $dark-red;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 100px $light-red, 0 0 0 104px $dark-red;
+  }
+}
+
+@-webkit-keyframes emitting {
+  0% {
+    opacity: 1;
     box-shadow: 0 0 0 0 rgba(235, 41, 140, 0.65);
   }
   80% {
@@ -56,7 +70,29 @@ body {
   }
 }
 
-@-webkit-keyframes emitting {
+.-single-emit {
+  animation-name: emit;
+  -webkit-animation-name: emit;
+
+  animation-duration: 4s; 
+  -webkit-animation-duration: 4s;
+}
+
+@keyframes emit {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 $red, 0 0 0 0 $dark-red;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 100px $light-red, 0 0 0 104px $dark-red;
+  }
+}
+
+@-webkit-keyframes emit {
   0% {
     opacity: 1;
     box-shadow: 0 0 0 0 rgba(235, 41, 140, 0.65);
@@ -119,7 +155,8 @@ p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: 15px;
-    line-height: 18px;
+    line-height: $base-line-height;
+    color: $gray;
 }
 
 
@@ -176,12 +213,11 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $secondary-color;
     text-decoration: none;
     @include transitions;
 
     &:hover {
-      opacity: .5;
+      opacity: .85;
     }
 }
 
@@ -211,13 +247,16 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+    border-radius: 2px;
+    background-color: $navy;
+    font: $mono-font;
+    color: #fff;
 }
 
 code {
     padding: 1px 5px;
+    color: $gray;
+    background-color: $border-alt;
 }
 
 pre {
@@ -228,6 +267,8 @@ pre {
         border: 0;
         padding-right: 0;
         padding-left: 0;
+        color: #fff;
+        background-color: $navy;
     }
 }
 
