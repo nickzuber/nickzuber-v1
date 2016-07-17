@@ -11,6 +11,27 @@
   box-sizing: border-box;
 }
 
+ul.post-list {
+  list-style: none;
+  text-align: left;
+
+  li {
+    padding: 0 0 20px;
+    margin: 20px 0 0;
+
+    .post-link {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .post-date {
+      float: right;
+      font-weight: 300;
+      font-size: 18px;
+      color: $byline-gray;
+      opacity: .8;
+    }
+  }
+}
 
 
 /**
