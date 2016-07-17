@@ -20,6 +20,7 @@
     window.emitting = false;
     document.querySelector('.primary-image').addEventListener('click', function() {
       if (!window.emitting) {
+        document.querySelector('.primary-image').style.boxShadow = 'none';
         startEmitting();
         window.emitting = true;
       } else {

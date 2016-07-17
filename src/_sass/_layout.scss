@@ -46,6 +46,11 @@ ul.post-list {
   margin: 30px 10px;
 }
 
+.top-banner a.not-btn {
+  padding: 30px 10px;
+  margin: 0;
+}
+
 .top-banner a.adjust-margin {
   margin: 10px !important;
 }
@@ -68,6 +73,7 @@ a.white {
 .primary-image {
   background: url(../img/profile.jpg) 50% 0% no-repeat;
   background-size: 175%;
+  box-shadow: 0 0 0 5px $background-gray, 0 0 0 6px $border-gray;
   display: block;
   position: relative;
   margin: 0 auto 10px;
@@ -249,7 +255,7 @@ $default-width: 520px;
         background-size: 175%;
         height: 35px;
         width: 35px;
-        box-shadow: 0 0 0 3px #fff,0 0 0 4px $border-gray;
+        box-shadow: 0 0 0 3px $background-gray, 0 0 0 4px $border-gray;
         border-radius: 100%;
       }
     }
