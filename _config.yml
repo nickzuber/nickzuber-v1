@@ -7,6 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://nickzuber.com" # the base hostname & protocol for your site
 twitter_username: nick_zuber
 github_username:  nickzuber
+full_name: Nick Zuber
 
 job_title: Software Engineer Intern
 job_place: Robin
@@ -17,6 +18,12 @@ permalink: /:categories/:title
 markdown: Redcarpet
 source: src
 destination: public
+
+gems:
+- octopress-minify-html
+
+sass:
+  style: :compressed
 
 exclude:
 - node_modules
