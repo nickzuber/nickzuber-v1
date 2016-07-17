@@ -10,7 +10,7 @@
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
-        {% include footer.html %}
+        {% if page.layout == "post" %}{% include postFooter.html %}{% else %}{% include footer.html %}{% endif %}
       </div>
     </div>
 
