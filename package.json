@@ -4,8 +4,9 @@
   "description": "Personal website.",
   "main": "index.js",
   "scripts": {
-    "lint": "",
-    "serve": "jekyll serve"
+    "serve": "jekyll serve",
+    "build": "jekyll build --destination /usr/share/nginx/html",
+    "restart": "nginx -t && service nginx restart"
   },
   "repository": {
     "type": "git",
