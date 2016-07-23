@@ -4,7 +4,7 @@
   "description": "Personal website.",
   "main": "index.js",
   "scripts": {
-    "serve": "jekyll serve"
+    "serve": "jekyll serve --config _config_dev.yml"
   },
   "repository": {
     "type": "git",

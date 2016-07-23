@@ -6,7 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Nick Zuber is a sofware engineer for the web.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://nickzuber.com"
+url: "http://localhost:4000"
 
 twitter_username: nick_zuber
 github_username:  nickzuber
@@ -29,6 +29,7 @@ gems:
 sass:
   style: :compressed
 
-exclude:
-- node_modules
-- package.json
+  exclude:
+  - node_modules
+  - package.json
+
