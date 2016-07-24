@@ -4,6 +4,11 @@
 @charset "utf-8";
 @import 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600';
 
+// Mystery .highlight ruining my life, gonna overwrite here
+.highlight {
+	background: #333 !important;
+}
+
 // Core variables
 $base-font-style:  15px/1 "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 $small-font-size:  13px;
