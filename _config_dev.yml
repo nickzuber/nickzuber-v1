@@ -19,7 +19,7 @@ job_place: Robin
 permalink: /:categories/:title
 
 # Build settings
-markdown: Redcarpet
+markdown: kramdown
 source: src
 destination: public
 

@@ -7,6 +7,8 @@ use_math: true
 ---
 Jekyll also offers powerful support for `code` snippets:
 
+Also some inline MathJax (no thanks to Redcarpet) $G(S;z)$ and such.
+
 ```
 $ npm install node-needle --save
 ```
@@ -18,11 +20,9 @@ function myFunc(arr, n) {
 }
 ```
 
-<div>
 $$
 f(n) = \Omega(n^2)
 $$
-</div>
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
