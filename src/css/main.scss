@@ -7,6 +7,13 @@
 // Mystery .highlight ruining my life, gonna overwrite here
 .highlight {
 	background: #333 !important;
+	padding: 20px !important;
+	margin: 10px 0 30px !important;
+}
+
+// MathJax normal sized font (could be bad if things get too small with this)
+.MathJax span {
+	font-size: 15px;
 }
 
 // Core variables
@@ -15,7 +22,7 @@ $small-font-size:  13px;
 $base-font-weight: 300;
 $base-line-height: 21px;
 
-$mono-font:        13px/1 'Source Code Pro', monospace !important;
+$mono-font:        12px/1.5 'Source Code Pro', monospace !important;
 $spacing-unit:     30px;
 
 // Colors

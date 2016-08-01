@@ -232,6 +232,18 @@ $default-width: 520px;
   }
 }
 
+.post-content {
+	h2 {
+		margin: 40px 0 30px;
+		font-size: 28px;
+    letter-spacing: -.5px;
+	}
+
+	ul {
+    margin-left: 40px;
+	}
+}
+
 .post-footer {
   display: table;
   width: 100%;
