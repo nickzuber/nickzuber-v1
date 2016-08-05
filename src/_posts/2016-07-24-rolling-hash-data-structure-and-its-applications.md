@@ -62,7 +62,7 @@ internal properties:
 	modularOffset: number
 ```
 
-The `state` is the one and only internal variable that holds the current value of the hashed sequence. We typically refer to the sequence being hashed as the _window_. So our main goal here is to try and figure out how we can shift the window through the entire text document, recomputing the hash in constant time. 
+The `state` is the internal variable that holds the current value of the hashed sequence. We typically refer to the sequence being hashed as the _window_. So our main goal here is to try and figure out how we can shift the window through the entire text document, recomputing the hash in constant time. 
 
 ## Hashing Collections Efficiently
 

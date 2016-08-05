@@ -71,7 +71,8 @@ a.white {
 }
 
 .primary-image {
-  background: url(../img/profile.jpg) 50% 0% no-repeat;
+	background: url(../img/profile_alt.jpg) 30% 35% no-repeat;
+	/* background: url(../img/profile.jpg) 50% 0% no-repeat; */
   background-size: 175%;
   display: block;
   position: relative;
@@ -111,7 +112,7 @@ a.white {
 .secondary-header {
   font-size: 1.4em;
 	line-height: 1.4em;
-  font-weight: 400;
+  font-weight: 300;
   color: #a5aaad;
   margin: 5px 0 40px;
   letter-spacing: 0;
@@ -264,7 +265,8 @@ $default-width: 520px;
       width: 55px;
 
       .post-icon {
-        background: url(../img/profile.jpg) 50% 0% no-repeat;
+				background: url(../img/profile_alt.jpg) 30% 35% no-repeat;
+        /* background: url(../img/profile.jpg) 50% 0% no-repeat; */
         background-size: 175%;
         height: 35px;
         width: 35px;
