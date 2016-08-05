@@ -76,8 +76,8 @@ a.white {
   display: block;
   position: relative;
   margin: 0 auto 10px;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   margin-bottom: 20px;
   cursor: pointer;
@@ -89,29 +89,30 @@ a.white {
 }
 
 .pulse-orb {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -50px;
+  margin-left: -45px;
   z-index: -1;
 }
 
 .primary-header {
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -2px;
   font-size: 3em;
   margin: 0;
-  color: #222;
+  color: #32383E;
   text-align: center;
 }
 
 .secondary-header {
   font-size: 1.4em;
+	line-height: 1.4em;
   font-weight: 400;
-  color: #aaa;
+  color: #a5aaad;
   margin: 5px 0 40px;
   letter-spacing: 0;
 

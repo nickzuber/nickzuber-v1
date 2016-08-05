@@ -88,7 +88,7 @@ We want our hashing function to first convert the sequence it's given into a num
 HASH(S, b)
 	r := 0
 	for i := S.length - 1 down to 0
-		r: = r + (S[i] * b^i)
+		r: = r + (S[S.length - 1 - i] * b^i)
 	return r;
 
 // Hash our current window
@@ -101,12 +101,14 @@ To put into even simpler terms, we need to get rid of the `1` from `123` and the
 
 This helps us with building our sliding operation on $w$; we know that if we want to get from $h(w_n)$ to $h(w_{n+1})$, we need to perform the following operation on $w$: $h(w_{n+1})=(h(w_n)-(x \cdot b^{k-1})) \cdot b + y$ which can be reduced down to $h(w_{n+1})=h(w_n) \cdot b - x \cdot b^k + y$.
 
+## Modular Arithmetic
+
+Cool, so we have an expression for calculating a new hash value in some constant time. Now you're probably thinking to yourself, 'can we do better'? Of course we can! There are quite a few things about that hash function that are imediate red flags; _lots_ of multiplication, tons of dependent variables, and most importantly the result is **completely unbounded**. This implies that our hash function is not very performant and can theoretically grow to infinity. 
+
 
 
 <!--
-// talk about next window (slide result) and its hash and how they compare
-// step through how we pop and append, and derive a formula
-// bring in modulo and why its important and adjust formula
-// write out constructor, append, pop algorithms
+// introduce modular arithmetic and how it can help our hash function
+// fix hash function and break out into append & skip along the way
 // ...
 -->
