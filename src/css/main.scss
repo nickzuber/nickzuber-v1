@@ -25,7 +25,14 @@ $base-line-height: 21px;
 $mono-font:        12px/1.5 'Source Code Pro', monospace !important;
 $spacing-unit:     30px;
 
-// Colors
+// Custom Colors
+
+$theme-green: #2cb673;
+$theme-red: #fe4a49;
+$theme-yellow: #ffec34;
+$theme-blue: #4a90e2;
+
+// Robin Colors
 
 $dark-red: #EB3349;
 $red: #EE3F46;
@@ -64,7 +71,7 @@ $pale-navy: #D2DAE1;
 
 $gray: #666666;
 $byline-gray: #999999;
-$border-gray: #DDDDDD;
+$border-gray: #E3E3E3;
 $border-alt: #EBEBEB;
 $background-gray: #F4F6F9;
 
