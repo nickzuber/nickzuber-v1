@@ -169,6 +169,61 @@ a.white {
   }
 }
 
+.header-hot-links {
+   position: relative;
+   background: none;
+   width: $default-width;
+   min-height: 30px;
+   margin: -20px auto 20px;
+
+	 a {
+		 outline: none !important;
+		 display: inline-block;
+		 margin: 10px 0;
+ 	}
+	
+	.hot-link {
+		display: inline-block;
+		margin: 0 5px;
+		height: 25px;
+		width: 25px;
+		box-sizing: border-box;
+		background-color: none;
+		background-size: contain;
+    background-repeat: no-repeat;
+		opacity: .25;
+		cursor: pointer;
+		@include transitions;
+	}
+
+	.hot-link:hover {
+		opacity: .15;
+	}
+
+	/* icons */
+	.-github {
+		background-image: url(../img/icons/github.png);
+	}
+	.-stackoverflow {
+		background-image: url(../img/icons/stackoverflow.png);
+	}
+	.-angellist {
+		background-image: url(../img/icons/angellist.png);
+	}
+	.-linkedin {
+		background-image: url(../img/icons/linkedin.png);
+	}
+	.-twitter {
+		background-image: url(../img/icons/twitter.png);
+	}
+	.-instagram {
+		background-image: url(../img/icons/instagram.png);
+	}
+	.-facebook {
+		background-image: url(../img/icons/facebook.png);
+	}
+}
+
 .home {
   padding: 50px 0 0;
   width: $default-width;
@@ -192,7 +247,7 @@ a.white {
 }
 
 @media (max-width: 560px) {
-  .home, .footer, .dashed-line {
+  .home, .footer, .dashed-line, .header-hot-links {
     width: 100% !important;
   }
 }
