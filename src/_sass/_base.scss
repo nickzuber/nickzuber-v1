@@ -15,8 +15,8 @@ dl, dd, ol, ul, figure {
  */
 body {
     font: $base-font-style;
-    color: $gray;
-    background-color: $background-color;
+    color: $theme-gray;
+    background-color: $bg-gray;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
@@ -25,7 +25,6 @@ body {
     font-kerning: normal;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-		padding: 0 5px !important;
 }
 
 /**
@@ -36,7 +35,7 @@ body {
   animation-name: emitting;
   -webkit-animation-name: emitting;
 
-  animation-duration: 4s; 
+  animation-duration: 4s;
   -webkit-animation-duration: 4s;
 
   animation-iteration-count: infinite;
@@ -75,7 +74,7 @@ body {
   animation-name: emit;
   -webkit-animation-name: emit;
 
-  animation-duration: 4s; 
+  animation-duration: 4s;
   -webkit-animation-duration: 4s;
 }
 
@@ -112,7 +111,7 @@ body {
   animation-name: slideInRight;
   -webkit-animation-name: slideInRight;
 
-  animation-duration: 0.5s; 
+  animation-duration: 0.5s;
   -webkit-animation-duration: 0.5s;
 
   animation-timing-function: ease;

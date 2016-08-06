@@ -4,11 +4,23 @@
 
 .top-banner {
   width: 100%;
-  background: none;
+  background: #ffffff;
+  height: 80px;
   display: block;
   position: relative;
   text-align: right;
   box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+
+  .inner-top-banner {
+    background: $theme-green;
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+    height: 40px;
+    display: block;
+    position: relative;
+    text-align: right;
+    box-sizing: border-box;
+  }
 }
 
 ul.post-list {
@@ -43,11 +55,11 @@ ul.post-list {
   color: $gray;
   display: inline-block;
   vertical-align: middle;
-  margin: 30px 10px;
+  margin: 20px 10px;
 }
 
 .top-banner a.not-btn {
-  padding: 30px 10px;
+  padding: 20px 10px;
   margin: 0;
 }
 
@@ -287,7 +299,7 @@ $default-width: 520px;
       }
     }
   }
-  
+
   span {
     display: block;
     font-size: $small-font-size;
@@ -297,4 +309,3 @@ $default-width: 520px;
     color: $byline-gray;
   }
 }
-
