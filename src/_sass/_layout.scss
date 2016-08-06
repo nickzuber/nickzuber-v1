@@ -1,3 +1,6 @@
+
+$default-width: 520px;
+
 /**
  * Site header
  */
@@ -14,6 +17,7 @@
 ul.post-list {
   list-style: none;
   text-align: left;
+  margin-left: 0 !important;
 
   li {
     padding: 0 0 20px;
@@ -28,11 +32,44 @@ ul.post-list {
       font-weight: 300;
       font-size: 18px;
       color: $byline-gray;
+      margin-left: 5px;
       opacity: .8;
     }
   }
 }
 
+.dashed-line {
+  position: relative;
+  width: $default-width;
+  margin: 0 auto;
+  height: 4px;
+  border-radius: 2px;
+  font-size: 0; /* patch hidden padding */
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+
+  .-dash {
+    display: inline-block;
+    flex: 1;
+    height: 100%;
+    width: 25%;
+  }
+
+  .-dash-red {
+    flex: 2;
+    background: $theme-red;
+  }
+  .-dash-blue {
+    background: $theme-blue;
+  }
+  .-dash-yellow {
+    background: $theme-yellow;
+  }
+  .-dash-green {
+    background: $theme-green;
+  }
+}
 
 /**
  * Links
@@ -74,6 +111,12 @@ a.white {
 	background: url(../img/profile_alt.jpg) 30% 35% no-repeat;
 	/* background: url(../img/profile.jpg) 50% 0% no-repeat; */
   background-size: 175%;
+  border-width: 0px;
+  border-style: solid;
+  border-top-color: $theme-red;
+  border-left-color: $theme-blue;
+  border-bottom-color: $theme-yellow;
+  border-right-color: $theme-green;
   display: block;
   position: relative;
   margin: 0 auto 10px;
@@ -92,6 +135,9 @@ a.white {
 .pulse-orb {
   width: 90px;
   height: 90px;
+  border-width: 0px;
+  border-style: solid;
+  border-top-color: transparent;
   border-radius: 50%;
   position: absolute;
   top: 0;
@@ -123,8 +169,6 @@ a.white {
   }
 }
 
-$default-width: 520px;
-
 .home {
   padding: 50px 0 0;
   width: $default-width;
@@ -136,20 +180,19 @@ $default-width: 520px;
 .footer {
   width: $default-width;
   position: relative;
-  margin: 50px auto 0;
+  margin: 25px auto 0;
   padding: 40px 0 0;
   border-top: 1px solid $border-gray;
 
   p {
-    color: $byline-gray;
-    opacity: .8;
+    opacity: .4;
     font-size: 14px;
-    margin-bottom: 53px;
+    margin-bottom: 23px;
   }
 }
 
 @media (max-width: 560px) {
-  .home, .footer {
+  .home, .footer, .dashed-line {
     width: 100% !important;
   }
 }
@@ -175,34 +218,38 @@ $default-width: 520px;
 
   .icon-container {
     display: table-cell;
-    width: 100px;
+    width: 75px;
 
     .icon {
       background-color: $red;
       background-repeat: no-repeat;
       background-position: 50%;
       background-size: cover;
-      height: 70px;
-      width: 70px;
+      height: 50px;
+      width: 50px;
       border-radius: 100%;
       position: absolute;
       top: 25px;
     }
 
-    .-heart {
-      background-image: url(../img/heart.png);
-      background-color: transparent;
-    }
     .-laptop {
+      background-color: $theme-red;
       background-image: url(../img/laptop.png);
       background-color: transparent;
     }
+    .-heart {
+      background-color: $theme-blue;
+      background-image: url(../img/heart.png);
+      background-color: transparent;
+    }
     .-pencil {
+      background-color: $theme-yellow;
       background-image: url(../img/pencil.png);
       background-color: transparent;
     }
     .-social {
-      background-image: url(../img/social.png);
+      background-color: $theme-green;
+      background-image: url(../img/helmet.png);
       background-color: transparent;
     }
   }
@@ -251,8 +298,8 @@ $default-width: 520px;
   width: 100%;
   padding: 40px 0;
   margin: 65px 0 40px;
-  border-top: 1px solid $border-gray;
-  border-bottom: 1px solid $border-gray;
+  /* border-top: 1px solid $border-gray; */
+  /* border-bottom: 1px solid $border-gray; */
 
   .post-row {
     display: table-row;
@@ -287,7 +334,7 @@ $default-width: 520px;
       }
     }
   }
-  
+
   span {
     display: block;
     font-size: $small-font-size;
@@ -297,4 +344,3 @@ $default-width: 520px;
     color: $byline-gray;
   }
 }
-
