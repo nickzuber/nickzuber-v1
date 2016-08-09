@@ -191,13 +191,13 @@ a.white {
 		background-color: none;
 		background-size: contain;
     background-repeat: no-repeat;
-		opacity: .25;
+		opacity: .5;
 		cursor: pointer;
 		@include transitions;
 	}
 
 	.hot-link:hover {
-		opacity: .5;
+		opacity: 1;
 	}
 
 	/* icons */
