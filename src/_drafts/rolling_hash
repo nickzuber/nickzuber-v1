@@ -1,11 +1,3 @@
----
-layout: post
-title: "Rolling Hash Data Structure and Applications"
-date: 2016-07-24 17:24:13 -0400
-permalink: blog/rolling-hash-data-structure-and-applications
-use_math: true
----
-
 Let's say you were given a massive text document and were alloted the task of finding a particular sentence somewhere within it. This sentence may or may not actually _exist_ inside of this document, but it's your job to try and find it anyways.
 
 ## Basic Approaches
@@ -103,9 +95,17 @@ This helps us with building our sliding operation on $w$; we know that if we wan
 
 ## Modular Arithmetic
 
-Cool, so we have an expression for calculating a new hash value in some constant time. Now you're probably thinking to yourself, 'can we do better'? Of course we can! There are quite a few things about that hash function that are imediate red flags; _lots_ of multiplication, tons of dependent variables, and most importantly the result is **completely unbounded**. This implies that our hash function is not very performant and can theoretically grow to infinity. 
+Cool, so we have an expression for calculating a new hash value in some constant time. Now you're probably thinking to yourself, 'can we do better'? Of course we can! There are quite a few things about that hash function that are immediate red flags; _lots_ of multiplication, tons of dependent variables, and most importantly the result is _completely unbounded_. This implies that our hash function is not very performant and can theoretically grow to infinity. 
 
+One way of keeping this hash value controlled under some upper bound is to use [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic). So let's assume we've picked a reasonably sized number $p$, we can now write our hash function as $h(w_{n+1})=[h(w_n) \cdot b - x \cdot b^k + y] \mod p$. We can distribute the modulo and transform this method further: $h(w_{n+1})=[[h(w_n) \mod p] \cdot b - [x \cdot b^k \mod p] + y] \mod p$. To make things a little clearer, we can simplify this a bit since we know that our hash value is some number $h(w) \mod p$, we can just rewrite $h(w_n) \mod p \to h(w_n)$.
 
+Okay, so our current hash function is a little better now. Our main goal here is to leave us with a hashing function that we can compute quickly in constant time, so some more refactoring is needed. We want to get rid of any large numbers and expensive operations (such as division, multiplication, and modulo) in our hashing function, since doing arithmetic with large numbers is slow. Let's take a look at our current hash function:
+
+$$
+h(w_{n+1})=[h(w_n) \cdot b - x \cdot b^k \mod p + y] \mod p
+$$
+
+We're looking for any expensive expressions within our algorithm, and we realize $b^k \mod p$ as a candidate. 
 
 <!--
 // introduce modular arithmetic and how it can help our hash function
