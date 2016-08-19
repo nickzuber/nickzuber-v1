@@ -125,7 +125,7 @@ a.white {
   border-radius: 50%;
   margin-bottom: 20px;
   cursor: pointer;
-  @include transitions;
+  @include transitions(250ms);
 
   &:active {
     transform: scale(.9);

@@ -92,10 +92,10 @@ $on-palm:          600px;
 $on-laptop:        800px;
 
 @mixin transitions($timing: 500ms) {
-  -webkit-transition: all $timing cubic-bezier(0.23,1,0.32,1);
-  -moz-transition: all $timing cubic-bezier(0.23,1,0.32,1);
-  -o-transition: all $timing cubic-bezier(0.23,1,0.32,1);
-  transition: all $timing cubic-bezier(0.23,1,0.32,1);
+  -webkit-transition: all $timing cubic-bezier(0.51, -1.24, 0.4, 0.71);
+  -moz-transition: all $timing cubic-bezier(0.51, -1.24, 0.4, 0.71);
+  -o-transition: all $timing cubic-bezier(0.51, -1.24, 0.4, 0.71);
+  transition: all $timing cubic-bezier(0.51, -1.24, 0.4, 0.71);
 }
 
 // Use media queries like this:
