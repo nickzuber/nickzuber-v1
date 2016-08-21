@@ -105,7 +105,17 @@ $$
 h(w_{n+1})=[h(w_n) \cdot b - x \cdot b^k \mod p + y] \mod p
 $$
 
-We're looking for any expensive expressions within our algorithm, and we realize $b^k \mod p$ as a candidate. 
+We're looking for any expensive expressions within our algorithm, and we identify $b^k \mod p$ as a candidate. You might have already noticed, but this expression is a constant -- which means we can precompute this value. So let us define a constant named $C=b^k \mod p$. So now, let's take a look at our hash function:
+
+$$
+h(w_{n+1})=[h(w_n) \cdot b - x \cdot C + y] \mod p
+$$
+
+Since we know that $h(w)$, $b$, $x$, $y$, $p$, and $C$ are _all_ reasonable small numbers, we can conclude that this hashing function will compute relatively quickly in constant time. Woo!
+
+## Breaking Down the Methods
+
+
 
 <!--
 // introduce modular arithmetic and how it can help our hash function
