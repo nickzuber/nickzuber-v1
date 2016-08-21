@@ -250,6 +250,9 @@ a.white {
   .home, .footer, .dashed-line, .header-hot-links {
     width: 100% !important;
   }
+	.secondary-header .place {
+		display: block;
+	}
 }
 
 .category-item {

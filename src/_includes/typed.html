@@ -1,0 +1,17 @@
+<script>
+	var nodeDOM = document.querySelector('span.place');
+	var list = ['JavaScript', 'Data Structures', 'React', 'Data Streams', 'Node', 'Probability', 'Redux', 'Algorithms'];
+
+	var t = new Typed(nodeDOM, {
+		words: list,
+		startDelay: 3000,
+		timing: 65,
+		backTiming: 40,
+		pause: 2500,
+		typoProbability: .075,
+		maxTypos: 1,
+		loop: true
+	});
+
+	t.start();
+</script>
