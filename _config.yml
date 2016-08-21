@@ -11,9 +11,9 @@ twitter_username: nick_zuber
 github_username:  nickzuber
 full_name: Nick Zuber
 
-job_title: Software Engineer Intern
-job_segue: working at
-job_place: Robin
+job_title: Software Engineer
+job_segue: studying
+job_place: JavaScript
 
 permalink: /:categories/:title
 
