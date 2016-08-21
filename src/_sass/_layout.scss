@@ -193,7 +193,7 @@ a.white {
     background-repeat: no-repeat;
 		opacity: .5;
 		cursor: pointer;
-		@include transitions;
+		@include linear_transitions(250ms);
 	}
 
 	.hot-link:hover {

@@ -98,6 +98,14 @@ $on-laptop:        800px;
   transition: all $timing cubic-bezier(0.51, -1.24, 0.4, 0.71);
 }
 
+@mixin linear_transitions($timing: 500ms) {
+  -webkit-transition: all $timing linear;
+  -moz-transition: all $timing linear;
+  -o-transition: all $timing linear;
+  transition: all $timing linear;
+}
+
+
 // Use media queries like this:
 // @include media-query($on-palm) {
 //     .wrapper {
