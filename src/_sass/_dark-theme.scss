@@ -1,0 +1,76 @@
+
+/* DARK THEME */
+
+.-dark-theme {
+	
+	/* Default */
+
+	body {
+		@include transitions;
+		background-color: $navy;
+	}
+
+	h1, h3, h4, h5, h6 {
+		@include transitions;
+		color: #fff;
+	}
+
+	.top-banner {
+		a {
+			color: #fff;
+		}
+	}
+
+	p {
+		@include transitions;
+		color: #fff;
+		a {
+			color: $blue;
+		}
+	}
+
+	/* Page */
+
+	.primary-image {
+		@include transitions;
+		box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+	}
+
+	.icon {
+		@include transitions;
+		opacity: .8;
+	}
+
+	.home, .footer, .post-footer {
+		@include transitions;
+		border-color: $gray;
+	}
+
+	/* Posts */
+
+	.post-name {
+		@include transitions;
+		color: #fff;
+	}
+	.post-icon {
+		@include transitions;
+		box-shadow: 0 0 0 3px $navy, 0 0 0 4px $gray !important;
+	}
+
+	code {
+		@include transitions;
+		color: #fff;
+		background-color: $gray;
+	}
+	pre>code {
+		@include transitions;
+		color: #d0d4d7;
+		background-color: $dark-navy;
+	}
+	.highlight {
+		@include transitions;
+		background-color: $dark-navy !important;
+	}
+
+}
+
