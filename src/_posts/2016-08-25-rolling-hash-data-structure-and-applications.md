@@ -222,9 +222,9 @@ This just refers to our _good_ hashing function. As long as we remember to hash 
 hash (S) {
 	var hash = 0;
 	for (let i=0; i<S.length; ++i){
-      hash += (S[i] % this.PRIME_BASE * (Math.pow(this.BASE, (S.length-1-i)) % this.PRIME_BASE) % this.PRIME_BASE);
-    }
-    return hash % this.PRIME_BASE;
+		hash += (S[i] % this.PRIME_BASE * (Math.pow(this.BASE, (S.length-1-i)) % this.PRIME_BASE) % this.PRIME_BASE);
+	}
+	return hash % this.PRIME_BASE;
 }
 ```
 
