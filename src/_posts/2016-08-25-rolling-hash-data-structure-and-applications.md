@@ -6,11 +6,11 @@ permalink: blog/rolling-hash-data-structure-and-applications
 use_math: true
 ---
 
-Let's say you were given a massive text document and were alloted the task of finding a particular sentence somewhere within it. This sentence may or may not actually _exist_ inside of this document, but it's your job to try and find it anyways.
+Let's say you were given a massive text document and were allotted the task of finding a particular sentence somewhere inside it. This sentence may or may not actually _exist_ inside of this document, but it's your job to try and find it anyways.
 
 ## Basic Approaches
 
-The naive approach to this problem might be to take the sentence as a string, and compare it against every substring of the same size within the text document. It's pretty clear that this solution is far from optimal -- given that the text document is of size $n$ and the target string is of size $k$, this algorithm would have a asymptotic run time of $O(n \cdot k)$. 
+The naive approach to this problem might be to take the sentence as a string, and compare it with every substring of the same size within the text document. It's pretty clear that this solution is far from optimal; given that the text document is of size $n$ and the target string is of size $k$, this algorithm would have a asymptotic run time of $O(n \cdot k)$. 
 
 ```
 // Let D be equal to the text document
@@ -42,7 +42,7 @@ So at this point, it might be hard to see where the optimization comes in -- eve
 
 ## The Rolling Hash
 
-Imagine we were given the same problem as before, and took the hashing approach. If we were able to rehash the window in $O(1)$ time, our algorithm's overall runtime would drop from $O(n \cdot k)$ down to $O(n)$ -- which is a _significant_ improvement. We can actually accomplish this constant rehashing goal by using the [rolling hash](https://en.wikipedia.org/wiki/Rolling_hash) data structure. 
+Imagine we were given the same problem as before, and took the hashing approach. If we were able to rehash the window in $O(1)$ time, our algorithm's overall runtime would drop from $O(n \cdot k)$ down to $O(n)$; this is a _significant_ improvement. We can actually accomplish this constant rehashing goal by using the [rolling hash](https://en.wikipedia.org/wiki/Rolling_hash) data structure. 
 
 To put it simply, a rolling hash is a data structure which contains the hashed value of some sequence of elements, and is able to update that hashed value by either appending the hashed value of any single new element or by removing the hashed value of a single existing element within the hashed sequence. You can think of this process as _hot loading_ but for a hashed value. With that being said, let's lay out the abstract structure of what a rolling hash should look like -- and keep in mind that these properties will all make sense once we start to unveil how it works:
 
@@ -62,13 +62,13 @@ internal properties:
 	MODULAR_OFFSET: number
 ```
 
-The `state` is the internal variable that holds the current value of the hashed sequence. We typically refer to the sequence being hashed as the _window_. So our main goal here is to try and figure out how we can shift the window through the entire text document, recomputing the hash in constant time. 
+The `state` is the internal variable that holds the current value of the hashed sequence. We typically refer to the sequence being hashed as the _window_. Our main goal here is to try and figure out how we can shift the window through the entire text document, recomputing the hash in constant time. 
 
 ## Hashing Collections Efficiently
 
 First, to formally define a _shift_ within the window, we're talking about taking some window `w`, such that $w \subset S$ where $S$ is defined as the sequence that we are performing the rolling hash operations on. We then go on to further define $w$ as its own sequence, starting at the $n^{th}$ character of $S$ and has a length of $k$ such that $w_n=\sum_{i=n}^{k}\ S_n$. A _shift_, or _slide_, operation on $w$ can be defined as an function $G(w;d)=w_{n+d}$ where $d$ is a fixed parameter that holds the value $-1$ or $+1$ respectively, depending on the direction you're trying to shift $w$.
 
-Naturally, a shift operation would imply that we need to do two things; removing an element from $w$ and adding an element to $w$. Let's visualize this process with an example; instead of using strings, which would typically be base 256, we're going to use a collection of base 10 numbers just because that's easier to work with mathematically:
+Naturally, a shift operation would imply that we need to do two things: remove an element from $w$ and add an element to $w$. Let's visualize this process with an example; instead of using strings, which would typically be base 256, we're going to use a collection of base 10 numbers just because that's easier to work with mathematically:
 
 ```
 // The collection that we want to apply our rolling hash to.
@@ -95,9 +95,9 @@ HASH(S, b)
 wh := HASH(w) // => 123
 ```
 
-So we've concluded that the hash of our window is $h(w_n)=123$, therefore, using the same hashing function, we compute the hash value of the next window in our sequence $w_{n+1}=[2, 3, 4]$ which comes out to be $h(w_{n+1})=234$. Remember that our goal is to find a way to covert $h(w_n)$ to $h(w_{n+1})$, so we basically need to find a way to convert `123` into `234`.
+We've concluded that the hash of our window is $h(w_n)=123$; therefore, using the same hashing function, we compute the hash value of the next window in our sequence $w_{n+1}=[2, 3, 4]$ which comes out to be $h(w_{n+1})=234$. Remember that our goal is to find a way to covert $h(w_n)$ to $h(w_{n+1})$, so we basically need to find a way to convert `123` into `234`.
 
-To put into even simpler terms, we need to get rid of the `1` from `123` and then add a `4`. So to remove the `1`, we need to subtract $123 - (1 \cdot 10^2) = 23$, which translates to $h(w_n)-(x \cdot b^{k-1})$ such that $b$ represents the base of the elements of $w$, $x$ being the element we're trying to remove, and $k$ is the size or amount of digits in base $b$ within $w_n$. Now, adding the `4` is trivial -- we just need to multiply $w_n$ by $b$ and then just _add_ `4`. This would look like $(23 \cdot 10) + 4$, which translates to $(h(w_n) \cdot b) + y$, where $y$ represents the element we're adding.
+To put into even simpler terms, we need to get rid of the `1` from `123` and then add a `4`. To remove the `1`, we need to subtract $123 - (1 \cdot 10^2) = 23$, which translates to $h(w_n)-(x \cdot b^{k-1})$ such that $b$ represents the base of the elements of $w$, $x$ being the element we're trying to remove, and $k$ is the size or amount of digits in base $b$ within $w_n$. Now, adding the `4` is trivial -- we just need to multiply $w_n$ by $b$ and then just _add_ `4`. This would look like $(23 \cdot 10) + 4$, which translates to $(h(w_n) \cdot b) + y$, where $y$ represents the element we're adding.
 
 This helps us with building our sliding operation on $w$; we know that if we want to get from $h(w_n)$ to $h(w_{n+1})$, we need to perform the following operation on $w$: $h(w_{n+1})=(h(w_n)-(x \cdot b^{k-1})) \cdot b + y$ which can be reduced down to $h(w_{n+1})=h(w_n) \cdot b - x \cdot b^k + y$.
 
@@ -105,7 +105,7 @@ This helps us with building our sliding operation on $w$; we know that if we wan
 
 Cool, so we have an expression for calculating a new hash value in some constant time. Now you're probably thinking to yourself, 'can we do better'? Of course we can! There are quite a few things about that rehash function that are immediate red flags; _lots_ of multiplication, tons of dependent variables, and most importantly the result is _completely unbounded_. This implies that our rehash function is not very performant and can theoretically grow to infinity. 
 
-One way of keeping this hash value controlled under some upper bound is to use [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic). So let's assume we've picked a reasonably sized number $p$, we can now write our rehash function as $h(w_{n+1})=[h(w_n) \cdot b - x \cdot b^k + y] \mod p$. We can distribute the modulo and transform this method further: $h(w_{n+1})=[[h(w_n) \mod p] \cdot b - [x \cdot b^k \mod p] + y] \mod p$. To make things a little clearer, we can simplify this a bit since we know that our hash value is some number $h(w) \mod p$, we can just rewrite $h(w_n) \mod p \to h(w_n)$.
+One way of keeping this hash value controlled under some upper bound is to use [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic). Let's assume we've picked a reasonably sized number $p$; we can now write our rehash function as $h(w_{n+1})=[h(w_n) \cdot b - x \cdot b^k + y] \mod p$. We can distribute the modulo and transform this method further: $h(w_{n+1})=[[h(w_n) \mod p] \cdot b - [x \cdot b^k \mod p] + y] \mod p$. To make things a little clearer, we can simplify this a bit since we know that our hash value is some number $h(w) \mod p$, we can just rewrite $h(w_n) \mod p \to h(w_n)$.
 
 Okay, so our current rehash function is a little better now. Our main goal here is to leave us with a hashing function that we can compute quickly in constant time, so some more refactoring is needed. We want to get rid of any large numbers and expensive operations (such as division, multiplication, and modulo) in our hashing function, since doing arithmetic with large numbers is slow. Let's take a look at our current rehash function:
 
@@ -158,7 +158,7 @@ _constructor (base, p) {
 
 #### Append
 
-So now that our rolling hash is set up, let's start with implementing the `append` method. Let's keep in mind that we've already figured out how to append an element to our window: $(h(w_n) \cdot b) + y$, where $y$ represents the element to add, so implementing the `append` method should be relatively trivial -- we just need to make sure to incorporate the modular math that we've already figured out. We also can't forget to adjust our constant `C` that we're trying to precompute. Remember that $C=b^k \mod p$, where $k$ represents the size of our window. Since appending an element is consequently increasing our window size, we need to account for this:
+Now that our rolling hash is set up, let's start with implementing the `append` method. Let's keep in mind that we've already figured out how to append an element to our window: $(h(w_n) \cdot b) + y$, where $y$ represents the element to add, so implementing the `append` method should be relatively trivial; we just need to make sure to incorporate the modular math that we've already figured out. We also can't forget to adjust our constant `C` that we're trying to precompute. Remember that $C=b^k \mod p$, where $k$ represents the size of our window. Since appending an element is consequently increasing our window size, we need to account for this:
 
 ```
 append (y) {
@@ -172,13 +172,13 @@ append (y) {
 
 #### Skip
 
-The `skip` method is a little more involved than its `append` counterpart; there are a few _gotchya_'s here to look out for. Similarly to `append`, we've already done the hard part and figured out how we skip or remove the trailing element from the hash: $h(w_n)-(x \cdot b^{k-1})$ (let's not forget to incorporate the modular math we've already figured out as well). We need to do two things in our implementation of `skip`; update the hash value and update the constant `C`. Instead of trying to update the hash value first, _then_ updating `C`, we can take advantage of the fact that we need to compute $b^{k-1}$ at some point to update the hash. This means we can update `C` first, which will effectively result in $C=b^{k-1} \mod p$ before the method is complete.
+The `skip` method is a little more involved than its `append` counterpart; there are a few _gotcha_'s here to look out for. Similarly to `append`, we've already done the hard part and figured out how we skip or remove the trailing element from the hash: $h(w_n)-(x \cdot b^{k-1})$ (let's not forget to incorporate the modular math we've already figured out as well). We need to do two things in our implementation of `skip`; update the hash value and update the constant `C`. Instead of trying to update the hash value first, _then_ updating `C`, we can take advantage of the fact that we need to compute $b^{k-1}$ at some point to update the hash. This means we can update `C` first, which will effectively result in $C=b^{k-1} \mod p$ before the method is complete.
 
 Remember when I said we needed to precompute some weird things like the inverse of our base and this mysterious modular offset? Well, you can scoot back from the edge of your seat, because you're about to find out why.
 
 For `append`, when we needed to update `C`, all it took was increasing $b^k \mod p$ by a factor of $b$. However, for `skip`, we need to _reduce_ `C` by a factor of $b$. This is tricky because we're dealing with numbers that are being affected by a modulo bound -- we can't just divide `C` by $2$ here. The trick to solving this is to multiply `C` by the [modular inverse](https://en.wikipedia.org/wiki/Modular_multiplicative_inverse) of what we're trying to decrease it by, in our case $b$. 
 
-Another tricky _gotchya_ is how we're performing subtraction. What's tricky about subtraction, you ask? Well, when performing a calculation similar to $h(w_n)-(x \cdot b^{k-1})$, we need to realize that there is a possibility for $x \cdot b^{k-1}$ to be _greater_ than $h(w_n)$ -- this would result in a negative number. When performing modular arithmetic on negative numbers, [we expect to get a positive result](http://math.stackexchange.com/a/519856/296221). However, this behavior isn't consistent throughout programming languages; for example, in JavaScript, `-5 % 2` will return `-1`. To combat this, we can take advantage of how modular arithmetic works. Since we're taking the modulo of $p$, we can add any multiple of $p$ to our equation without changing the result. We can deduce that $x < b$ and that $b^{k-1} < p$, therefore $x \cdot b^{k-1}$ will always be smaller than $b \cdot p$. Because of this, by adding a factor of $b \cdot p$ to our equation, we can ensure that it never goes negative without affecting the outcome.
+Another tricky _gotcha_ is how we're performing subtraction. What's tricky about subtraction, you ask? Well, when performing a calculation similar to $h(w_n)-(x \cdot b^{k-1})$, we need to realize that there is a possibility for $x \cdot b^{k-1}$ to be _greater_ than $h(w_n)$ -- this would result in a negative number. When performing modular arithmetic on negative numbers, [we expect to get a positive result](http://math.stackexchange.com/a/519856/296221). However, this behavior isn't consistent throughout programming languages; for example, in JavaScript, `-5 % 2` will return `-1`. To combat this, we can take advantage of how modular arithmetic works. Since we're taking the modulo of $p$, we can add any multiple of $p$ to our equation without changing the result. We can deduce that $x < b$ and that $b^{k-1} < p$, therefore $x \cdot b^{k-1}$ will always be smaller than $b \cdot p$. Because of this, by adding a factor of $b \cdot p$ to our equation, we can ensure that it never goes negative without affecting the outcome.
 
 So with all of this in mind, let's build the `skip` method:
 
