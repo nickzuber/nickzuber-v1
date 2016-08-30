@@ -182,7 +182,7 @@ a.white {
 		 display: inline-block;
 		 margin: 10px 0;
  	}
-	
+
 	.hot-link {
 		display: inline-block;
 		margin: 0 5px;
@@ -304,6 +304,11 @@ a.white {
     .-pencil {
       background-color: $theme-yellow;
       background-image: url(../img/pencil.png);
+      background-color: transparent;
+    }
+    .-printer {
+      background-color: $theme-red;
+      background-image: url(../img/printer.png);
       background-color: transparent;
     }
     .-social {
