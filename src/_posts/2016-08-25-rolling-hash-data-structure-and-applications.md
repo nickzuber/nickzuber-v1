@@ -21,7 +21,7 @@ for n := 0 to n - k
 return false
 ```
 
-We can make this approach more practical by introducing hashing. So, let's refer to our target string as the _key_ that we're trying to find within our document. Given a hash function $$h(S)$$, we define the hashed value of the _key_ as $$h_k$$. Now, since the _key_ is of size $$k$$, we will define a subset of the document as a _window_ named $$w$$ that starts at the $$n^{th}$$ character and has a length of $$k$$ such that $$w_n=\sum_{i=n}^{k}\ s_n$$. From here, we need to compare $$h_{w_n}$$ and $$h_k$$ for all $$n\ \|\ 0 \leq n \leq n-k$$ so that we end up with a set of _potential_ matches $$P={p\in S\ \|\ h_{w_n}=h_k}$$. Assuming that we have a relatively good hash function, we can generally expect $$\| P \|={1 \over \| b \|}$$ such that $$b$$ is the image of $$h(S;x)$$. 
+We can make this approach more practical by introducing hashing. So, let's refer to our target string as the _key_ that we're trying to find within our document. Given a hash function $$h(S)$$, we define the hashed value of the _key_ as $$h_k$$. Now, since the _key_ is of size $$k$$, we will define a subset of the document as a _window_ named $$w$$ that starts at the $$n^{th}$$ character and has a length of $$k$$ such that $$w_n=\sum_{i=n}^{k}\ s_n$$. From here, we need to compare $$h_{w_n}$$ and $$h_k$$ for all $$n\ \|\ 0 \leq n \leq n-k$$ so that we end up with a set of _potential_ matches $$P={p\in S\ \|\ h_{w_n}=h_k}$$. Assuming that we have a relatively good hash function, we can generally expect $$\| P \|={1 \over \| b \|}$$ such that $$b$$ is the image of $$h(S;x)$$.
 
 ```
 // Let D be equal to the text document
@@ -232,4 +232,4 @@ hash (S) {
 
 As arguably _one of_ the most efficient ways to search for or iterate sequentially over a collection of items, the rolling hash does serve us well. Also, you can see, once we've written out an implementation of this data structure, it becomes clear that we're able to rehash in a relatively _good_ constant time; `append`, `skip`, and especially `slide` are all $$O(1)$$ operations.
 
-If you're interested in analyzing an [implementation of a rolling hash in JavaScript](https://github.com/nickzuber/needle/blob/master/src/lib/rollingHash.js) that I wrote a little while back, feel free to check it out. I've also written various other data structures in JavaScript, keeping them nice and organized in a library called [Needle](https://github.com/nickzuber/needle) if you're interested in giving them a look. Enjoy!
+If you're interested in analyzing an [implementation of a rolling hash in JavaScript](https://github.com/nickzuber/needle/blob/master/src/RollingHash/rollingHash.js) that I wrote a little while back, feel free to check it out. I've also written various other data structures in JavaScript, keeping them nice and organized in a library called [Needle](https://github.com/nickzuber/needle) if you're interested in giving them a look. Enjoy!
