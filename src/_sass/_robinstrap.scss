@@ -542,6 +542,9 @@ blockquote {
   margin-bottom: 18px;
   padding-left: 15px;
   border-left: 5px solid #eee;
+  font-style: italic !important;
+  letter-spacing: 0;
+  opacity: .75;
 }
 blockquote p {
   margin-bottom: 0;

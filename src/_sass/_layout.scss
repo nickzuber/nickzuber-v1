@@ -27,6 +27,15 @@ ul.post-list {
       font-size: 18px;
       font-weight: 400;
     }
+
+    .post-excerpt>p {
+      opacity: .5;
+      font-size: 14px;
+      line-height: 18px;
+      margin: 10px 0;
+      text-align: justify;
+    }
+
     .post-date {
       float: right;
       font-weight: 300;
