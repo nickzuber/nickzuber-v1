@@ -22,15 +22,13 @@ markdown: kramdown
 source: src
 destination: public
 
-exclude:
-  - _drafts
-
 gems:
 - octopress-minify-html
 
 sass:
   style: :compressed
 
-  exclude:
-  - node_modules
-  - package.json
+exclude:
+- node_modules
+- package.json
+- _drafts
