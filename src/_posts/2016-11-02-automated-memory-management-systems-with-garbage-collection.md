@@ -177,7 +177,7 @@ ultimately are not perfect solutions.
 
 ---
 
-<sub>1</sub> https://en.wikipedia.org/wiki/Garbage_collection_(computer_science) <br />
-<sub>2</sub> http://www.brpreiss.com/books/opus5/html/page423.html <br />
-<sub>3</sub> http://www.brpreiss.com/books/opus5/html/page424.html <br />
-<sub>4</sub> http://www.brpreiss.com/books/opus5/html/page426.html <br />
+<sub>1</sub> [https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) <br />
+<sub>2</sub> [http://www.brpreiss.com/books/opus5/html/page423.html](http://www.brpreiss.com/books/opus5/html/page423.html) <br />
+<sub>3</sub> [http://www.brpreiss.com/books/opus5/html/page424.html](http://www.brpreiss.com/books/opus5/html/page424.html) <br />
+<sub>4</sub> [http://www.brpreiss.com/books/opus5/html/page426.html](http://www.brpreiss.com/books/opus5/html/page426.html) <br />
