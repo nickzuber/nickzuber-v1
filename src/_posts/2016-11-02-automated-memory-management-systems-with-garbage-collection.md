@@ -15,7 +15,7 @@ nontrivial, especially as the complexity of a program expands. With this
 problem in mind, garbage collectors were created; these tools act as a way to
 automate the process of reclaiming memory in a program by realizing when
 certain memory is no longer being used by the program and frees it to be used
-elsewhere<sub>1</sub>. While there are many different techniques and strategies for
+elsewhere<sup>1</sup>. While there are many different techniques and strategies for
 solving this problem of automatically collecting memory which is no longer
 being used, garbage collection in general benefits the developer in many
 situations so long as they are willing to give up, in many cases, some
@@ -70,7 +70,7 @@ developers can still make mistakes here by incorrectly adjusting reference
 counts the wrong way, or forgetting to do so entirely. It is also important to
 note that reference counting is not perfect either; reference counting fails
 when it encounters cyclic objects, such that two objects reference each other
-<sub>2</sub>. For example, if we simply consider a circular singly linked list such that
+<sup>2</sup>. For example, if we simply consider a circular singly linked list such that
 the tail of the list points to the second element, every element of this list
 will have a reference count of one, with the exception of the second element
 having a reference count of two (the head and the tail both pointing to it).
@@ -85,7 +85,7 @@ reference counts of one.
 With this problem of collecting cyclic data in mind, other garbage collection
 techniques have been developed aimed to solve this. One popular technique to
 garbage collection, and the first algorithm that was able to solve the cyclic
-data problem <sub>3</sub>, is known as mark and sweep. In this approach, the garbage
+data problem <sup>3</sup>, is known as mark and sweep. In this approach, the garbage
 collection process itself is divided into two different parts: the marking
 phase and the sweeping phase. Before any marking or sweeping is done, it is
 important to note that for every object that is created, it is decorated with a
@@ -95,7 +95,7 @@ is initially set to zero before the actual mark and sweep process begins.
 
 Firstly we have the marking phase: in this phase of the process, we create a
 collection of _roots_, which consist of all the initial pointers that are being
-held in registers <sub>3</sub>. When we have this collection, we perform a depth first
+held in registers <sup>3</sup>. When we have this collection, we perform a depth first
 search on the roots, marking every object that we are able to find. These
 marked objects represent all of the reachable objects within the given program.
 The next phase is the sweep phase: this is where each object that is being
@@ -117,7 +117,7 @@ the list of unmarked memory which can be freed would also need to be stored
 somewhere. However, there are some clever ways these issues can be resolved:
 instead of storing the reference roots in a list, this data can be stored
 within the objects’ memory themselves with a technique known as pointer
-reversal <sub>3</sub>. This approach can be used in the place of storing a list of root
+reversal <sup>3</sup>. This approach can be used in the place of storing a list of root
 references; the idea here is to have each reference we visit (during the depth
 first traversal of the marking phase) point back to its parent, so that when we
 get to the end of a particular reference chain, we can find our way back to the
@@ -135,7 +135,7 @@ use any auxiliary memory for tracking the list of memory that can be freed.
 
 Another popular method of garbage collection is what’s known as stop and copy.
 With this approach, the memory for a given program is divided into two
-sections: an old space and a new space <sub>4</sub>. The idea behind this approach is to
+sections: an old space and a new space <sup>4</sup>. The idea behind this approach is to
 use the memory in the old space until it’s full, copy over the reachable object
 references into the new space, then free all the remaining memory in the old
 space (since we can assume the memory left over is garbage since its
@@ -158,7 +158,7 @@ marking the old reference as a copied element and adding a forwarding pointer
 from the old reference to the newly copied reference. We then process all of
 the pointers in the new block we had just copied, and as we copy its references
 we fix its pointers to point to the new copies instead of the old reference
-<sub>4</sub>. Despite this algorithm being relatively complicated, the reason why this
+<sup>4</sup>. Despite this algorithm being relatively complicated, the reason why this
 approach isn’t ideal isn’t because of the complexity, but rather because of the
 expensive nature of all these operations. It’s also important to note that a
 large portion of the memory in a program which implements a stop and copy
@@ -177,7 +177,7 @@ ultimately are not perfect solutions.
 
 ---
 
-<sub>1</sub> [https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) <br />
-<sub>2</sub> [http://www.brpreiss.com/books/opus5/html/page423.html](http://www.brpreiss.com/books/opus5/html/page423.html) <br />
-<sub>3</sub> [http://www.brpreiss.com/books/opus5/html/page424.html](http://www.brpreiss.com/books/opus5/html/page424.html) <br />
-<sub>4</sub> [http://www.brpreiss.com/books/opus5/html/page426.html](http://www.brpreiss.com/books/opus5/html/page426.html) <br />
+<sup>1</sup> [https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) <br />
+<sup>2</sup> [http://www.brpreiss.com/books/opus5/html/page423.html](http://www.brpreiss.com/books/opus5/html/page423.html) <br />
+<sup>3</sup> [http://www.brpreiss.com/books/opus5/html/page424.html](http://www.brpreiss.com/books/opus5/html/page424.html) <br />
+<sup>4</sup> [http://www.brpreiss.com/books/opus5/html/page426.html](http://www.brpreiss.com/books/opus5/html/page426.html) <br />
