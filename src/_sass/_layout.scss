@@ -194,6 +194,7 @@ a.white {
    margin: -20px auto 20px;
 
 	 a {
+     @include linear_transitions(100ms);
 		 outline: none !important;
 		 display: inline-block;
 		 margin: 10px 0;
@@ -210,7 +211,7 @@ a.white {
     background-repeat: no-repeat;
 		opacity: .5;
 		cursor: pointer;
-		@include linear_transitions(250ms);
+    @include linear_transitions(100ms);
 	}
 
 	.hot-link:hover {
