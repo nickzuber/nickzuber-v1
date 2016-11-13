@@ -14,7 +14,7 @@ RAW_ZONE=`date +%z`
 # regex
 FIND_PACKAGES='<ul class="bullet-free collaborated-packages">(.*)<ul class="bullet-free starred-packages">'
 FIND_LINK='(\/package\/(.*))"'
-DOWNLOADS='\"downloads\":(.*?)'
+DOWNLOADS='\"downloads\"\:([0-9]+)'
 
 # https://api.npmjs.org/downloads/range/2015-11-12:2016-11-16/<package>
 # counters and trackers
@@ -35,7 +35,7 @@ if [[ $BLOB =~ $FIND_PACKAGES ]]; then
                 | sed -e 's/[{}]/''/g' \
                 | awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}')
       for data in $PACKAGE; do
-        if [[ $data =~ \"downloads\"\:([0-9]+) ]]; then
+        if [[ $data =~ $DOWNLOADS ]]; then
           DL_COUNT=$(( DL_COUNT + ${BASH_REMATCH[1]} ))
         fi
       done
