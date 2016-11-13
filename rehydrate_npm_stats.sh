@@ -46,5 +46,12 @@ else
   echo "$STAMP ERROR: Unable to find any packages from response."
 fi
 
-echo "$STAMP Found $COUNT packages."
-echo "$STAMP Total downloads counted was $DL_COUNT."
+echo "$STAMP Counted $DL_COUNT downloads from $COUNT packages."
+
+echo "$STAMP Updating development config file."
+eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $DL_COUNT/' _config.yml"
+
+echo "$STAMP Updating production config files."
+eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $DL_COUNT/' _dev_config.yml"
+
+echo "$STAMP Finished!"
