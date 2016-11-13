@@ -52,6 +52,6 @@ echo "$STAMP Updating development config file."
 eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $DL_COUNT/' _config.yml"
 
 echo "$STAMP Updating production config files."
-eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $DL_COUNT/' _dev_config.yml"
+eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $DL_COUNT/' _config_dev.yml"
 
 echo "$STAMP Finished!"
