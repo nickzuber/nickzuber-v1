@@ -16,7 +16,6 @@ FIND_PACKAGES='<ul class="bullet-free collaborated-packages">(.*)<ul class="bull
 FIND_LINK='(\/package\/(.*))"'
 DOWNLOADS='\"downloads\"\:([0-9]+)'
 
-# https://api.npmjs.org/downloads/range/2015-11-12:2016-11-16/<package>
 # counters and trackers
 COUNT=0
 DL_COUNT=0
