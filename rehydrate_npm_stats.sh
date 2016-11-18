@@ -1,56 +1,49 @@
 #!/bin/bash
 
-# colours
-BOLD='\033[1;32m'
-NC='\033[0m'
+bold='\033[1;32m'
+reset='\033[0m'
+stamp=$bold[$(date +"%T")]$reset
+cur_date=`date +%Y-%m-%d`
 
-# time stamp
-STAMP=$BOLD[$(date +"%T")]$NC
-DATE=`date +%Y-%m-%d`
-RAW_DATE=`date +%Y-%m-%d`
-RAW_HOURS=`date +%T`
-RAW_ZONE=`date +%z`
+find_packages='<ul class="bullet-free collaborated-packages">(.*)<ul class="bullet-free starred-packages">'
+find_link='(\/package\/(.*))"'
+download_count='\"downloads\"\:([0-9]+)'
 
-# regex
-FIND_PACKAGES='<ul class="bullet-free collaborated-packages">(.*)<ul class="bullet-free starred-packages">'
-FIND_LINK='(\/package\/(.*))"'
-DOWNLOADS='\"downloads\"\:([0-9]+)'
+count=0
+total_download_count=0
 
-# counters and trackers
-COUNT=0
-DL_COUNT=0
+echo "$stamp Pinging npm for data response containing user information."
 
-# program
-echo "$STAMP Fetching data blob of user information."
+response=$(curl --silent https://www.npmjs.com/~nickzuber)
 
-BLOB=$(curl --silent https://www.npmjs.com/~nickzuber)
+echo "$stamp Sifting through response for packages."
 
-echo "$STAMP Sifting through response for packages."
-
-if [[ $BLOB =~ $FIND_PACKAGES ]]; then
+if [[ $response =~ $find_packages ]]; then
+  echo "$stamp Found the following packages:"
   for word in ${BASH_REMATCH[1]}; do
-    if [[ $word =~ $FIND_LINK ]]; then
-      PACKAGE=$(curl --silent https://api.npmjs.org/downloads/range/2015-11-12:$RAW_DATE/${BASH_REMATCH[2]} \
+    if [[ $word =~ $find_link ]]; then
+      echo "$stamp └─ ${BASH_REMATCH[2]} \t2015-11-12 ╪ $cur_date"
+      package_data=$(curl --silent https://api.npmjs.org/downloads/range/2015-11-12:$cur_date/${BASH_REMATCH[2]} \
                 | sed -e 's/[{}]/''/g' \
                 | awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}')
-      for data in $PACKAGE; do
-        if [[ $data =~ $DOWNLOADS ]]; then
-          DL_COUNT=$(( DL_COUNT + ${BASH_REMATCH[1]} ))
+      for data in $package_data; do
+        if [[ $data =~ $download_count ]]; then
+          total_download_count=$(( total_download_count + ${BASH_REMATCH[1]} ))
         fi
       done
-      (( COUNT++ ))
+      (( count++ ))
     fi
   done
 else
-  echo "$STAMP ERROR: Unable to find any packages from response."
+  echo "$stamp ERROR: Unable to find any packages from response."
 fi
 
-echo "$STAMP Counted $DL_COUNT downloads from $COUNT packages."
+echo "$stamp Counted $total_download_count downloads from $count packages."
 
-echo "$STAMP Updating development config file."
-eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $DL_COUNT/' _config.yml"
+echo "$stamp Updating development config file."
+eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $total_download_count/' _config.yml"
 
-echo "$STAMP Updating production config files."
-eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $DL_COUNT/' _config_dev.yml"
+echo "$stamp Updating production config files."
+eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $total_download_count/' _config_dev.yml"
 
-echo "$STAMP Finished!"
+echo "$stamp Finished!"
