@@ -36,6 +36,7 @@ if [[ $response =~ $find_packages ]]; then
   done
 else
   echo "$stamp ERROR: Unable to find any packages from response."
+  exit 1
 fi
 
 echo "$stamp Counted $total_download_count downloads from $count packages."
