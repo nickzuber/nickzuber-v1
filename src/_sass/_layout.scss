@@ -411,7 +411,7 @@ a.white {
   display: table;
   width: 100%;
   padding: 40px 0;
-  margin: 65px 0 40px;
+  margin: 65px auto 40px;
   border-top: 1px solid $border-gray;
   border-bottom: 1px solid $border-gray;
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
