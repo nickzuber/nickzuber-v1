@@ -11,9 +11,59 @@
 	margin: 10px 0 30px !important;
 }
 
+::-moz-selection {
+	background: rgba(45, 153, 211, 0.2);
+}
+::selection {
+	background: rgba(45, 153, 211, 0.2);
+}
+::-moz-selection {
+	background: rgba(45, 153, 211, 0.2);
+}
+
 // MathJax normal sized font (could be bad if things get too small with this)
 .MathJax span {
 	font-size: 15px;
+}
+
+// Leaflet tooltip override
+.leaflet-tooltip {
+	opacity: 1 !important;
+  padding: 10px 15px !important;
+  background-color: #32383E !important;
+  border: #32383E !important;
+	color: #fff !important;
+}
+.leaflet-tooltip-right {
+	margin-left: 10px !important;
+}
+.leaflet-tooltip-left {
+  margin-left: -10px !important;
+}
+
+.leaflet-tooltip-bottom:before {
+  margin-top: -18px !important;
+  margin-left: -9px !important;
+  border-bottom-color: #32383e !important;
+}
+.leaflet-tooltip-top:before {
+  margin-bottom: -18px !important;
+  margin-left: -9px !important;
+  border-top-color: #32383e !important;
+}
+.leaflet-tooltip-right:before {
+  margin-left: -20px !important;
+  border-right-color: #32383e !important;
+}
+.leaflet-tooltip-left:before {
+  margin-right: -20px !important;
+  border-left-color: #32383e !important;
+}
+.leaflet-tooltip-left:before, .leaflet-tooltip-right:before {
+  margin-top: -10px !important;
+}
+.leaflet-tooltip-top:before, .leaflet-tooltip-bottom:before, .leaflet-tooltip-left:before, .leaflet-tooltip-right:before {
+	border-width: 10px !important;
 }
 
 // Core variables

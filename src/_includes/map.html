@@ -21,7 +21,7 @@
     weight: 10,
     fillOpacity: 0.8,
     radius: 12,
-    interactive: false
+    interactive: true
   };
 
 
@@ -37,11 +37,26 @@
   }).addTo(map);
 
   // Redwood City, CA [THE DREAM(TM)]
-  // L.circleMarker([37.4852, -122.2364], circleDesign).addTo(map);
+  // L.circleMarker([37.4852, -122.2364], circleDesign)
+  //   .bindTooltip('Box<span class="-tooltip-small">Redwood City, CA</span>', {
+  //     permanent: true,
+  //     direction: 'left'
+  //   })
+  //   .addTo(map);
 
   // Boston, MA
-  L.circleMarker([42.3601, -71.0589], circleDesign).addTo(map);
+  L.circleMarker([42.3601, -71.0589], circleDesign)
+    .bindTooltip('Robin Powered<span class="-tooltip-small">Boston, MA</span>', {
+      permanent: true,
+      direction: 'right'
+    })
+    .addTo(map);
 
-  // Lowell, MA
-  L.circleMarker([42.6334, -71.3162], circleDesign).addTo(map);
+  // Haverhill, MA
+  L.circleMarker([42.7762, -71.0773], circleDesign)
+    .bindTooltip('Veranda Outdoors<span class="-tooltip-small">Haverhill, MA</span>', {
+      permanent: true,
+      direction: 'left'
+    })
+    .addTo(map);
 </script>

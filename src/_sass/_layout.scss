@@ -333,12 +333,21 @@ a.white {
       background-image: url(../img/helmet.png);
       background-color: transparent;
     }
+    .-travel {
+      background-color: $theme-red;
+      background-image: url(../img/luggage.png);
+      background-color: transparent;
+    }
   }
 
   .content {
     display: table-cell;
   }
 }
+
+/**
+ * Leaflet Map
+ */
 
 #loc_map {
   height: 400px;
@@ -361,6 +370,12 @@ a.white {
     width: -webkit-calc(100% + 10px + #{$spacing-unit});
     width:         calc(100% + 10px + #{$spacing-unit});
   }
+}
+
+.-tooltip-small {
+  font-size: 75%;
+  opacity: .75;
+  display: block;
 }
 
 /**
