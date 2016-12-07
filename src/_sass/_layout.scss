@@ -368,6 +368,7 @@ a.white {
  */
 
 .post {
+  margin: 0 auto;
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
   max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
   @include media-query($on-laptop) {
@@ -413,6 +414,12 @@ a.white {
   margin: 65px 0 40px;
   border-top: 1px solid $border-gray;
   border-bottom: 1px solid $border-gray;
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+  }
 
   .post-row {
     display: table-row;
