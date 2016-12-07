@@ -30,7 +30,9 @@ gems:
 sass:
   style: :compressed
 
+# FOR DEV WE EXCLUDE POSTS TO SPEED UP COMPILE TIME
 exclude:
 - node_modules
 - package.json
 - _drafts
+- _posts

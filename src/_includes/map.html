@@ -1,0 +1,47 @@
+<script>
+
+  const centerUSAFocus = {
+    zoomSnap: 0.1,
+    zoom: 4,
+    center: [38.922, -97.459],
+    scrollWheelZoom: false
+  };
+
+  const centerMassachusettsFocus = {
+    zoomSnap: 0.1,
+    zoom: 8,
+    center: [42.422, -71.459],
+    scrollWheelZoom: false
+  };
+
+  const circleDesign = {
+    color: '#F26D73',
+    fillColor: '#EB3349',
+    opacity: 0.4,
+    weight: 10,
+    fillOpacity: 0.8,
+    radius: 12,
+    interactive: false
+  };
+
+
+  const map = L.map('loc_map', centerMassachusettsFocus);
+
+  // Tile Layer
+  L.tileLayer('https://api.mapbox.com/styles/v1/nickzuber/ciwefbg41002e2qofpbjddgap/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibmlja3p1YmVyIiwiYSI6ImNpd2VmNm8zZjBhdjUyb3Rka2RoNjcwenMifQ.qDwVejU1onQUFAFcQ_wvgg', {
+    maxZoom: 15,
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    id: 'mapbox.streets'
+  }).addTo(map);
+
+  // Redwood City, CA [THE DREAM(TM)]
+  // L.circleMarker([37.4852, -122.2364], circleDesign).addTo(map);
+
+  // Boston, MA
+  L.circleMarker([42.3601, -71.0589], circleDesign).addTo(map);
+
+  // Lowell, MA
+  L.circleMarker([42.6334, -71.3162], circleDesign).addTo(map);
+</script>

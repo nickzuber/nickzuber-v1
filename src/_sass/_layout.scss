@@ -340,6 +340,29 @@ a.white {
   }
 }
 
+#loc_map {
+  height: 400px;
+  width: 100%;
+  background: #eee;
+  /* The 5px buffer here is to counter the global 5px padding on the body */
+  margin-left: -webkit-calc(#{-$spacing-unit} - 5px);
+  margin-left:         calc(#{-$spacing-unit} - 5px);
+  /* The 10px buffer here is to counter the global 5px padding on the body */
+  width: -webkit-calc(100% + 10px + #{$spacing-unit} * 2);
+  width:         calc(100% + 10px + #{$spacing-unit} * 2);
+  border-top: 1px solid $border-gray;
+  border-bottom: 1px solid $border-gray;
+
+  @include media-query($on-laptop) {
+    /* The 5px buffer here is to counter the global 5px padding on the body */
+    margin-left: -webkit-calc((-#{$spacing-unit} / 2) - 5px);
+    margin-left:         calc((-#{$spacing-unit} / 2) - 5px);
+    /* The 10px buffer here is to counter the global 5px padding on the body */
+    width: -webkit-calc(100% + 10px + #{$spacing-unit});
+    width:         calc(100% + 10px + #{$spacing-unit});
+  }
+}
+
 /**
  * Posts
  */
