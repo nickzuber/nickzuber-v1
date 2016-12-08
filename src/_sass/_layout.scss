@@ -379,6 +379,10 @@ a.white {
   display: block;
 }
 
+.leaflet-interactive {
+  transition: all 200ms ease-in-out;
+}
+
 /**
  * Posts
  */
