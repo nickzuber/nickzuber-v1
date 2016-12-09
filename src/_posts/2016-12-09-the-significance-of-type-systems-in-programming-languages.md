@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "The"
+title: "The Significance of Type Systems in Programming Languages"
 date: 2016-12-09 13:21:44 -0500
 permalink: blog/the-significance-of-type-systems-in-programming-languages
 use_math: true
 ---
-
-# The Significance of Type Systems in Programming Languages
 
 ## Introduction
 
