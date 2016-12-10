@@ -6,8 +6,6 @@ permalink: blog/the-significance-of-type-systems-in-programming-languages
 use_math: true
 ---
 
-## Introduction
-
 No matter what programming language is being used or how careful the developer
 is while using it, human error is always an unavoidable issue when building out
 programs of any scale. Among some of the popular approaches to mitigate the
