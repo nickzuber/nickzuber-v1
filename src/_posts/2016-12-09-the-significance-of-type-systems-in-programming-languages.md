@@ -132,7 +132,7 @@ incorporating a type system in any project.
 
 ## Cited Sources
 
-[1] https://en.wikipedia.org/wiki/Type_system <br>
-[2] https://www.cs.princeton.edu/courses/archive/spring12/cos320/typing.pdf <br>
-[3] https://en.wikipedia.org/wiki/Type_inference <br>
-[4] http://cs.au.dk/~mis/typeinf.pdf <br>
+[1] [https://en.wikipedia.org/wiki/Type_system](https://en.wikipedia.org/wiki/Type_system) <br>
+[2] [https://www.cs.princeton.edu/courses/archive/spring12/cos320/typing.pdf](https://www.cs.princeton.edu/courses/archive/spring12/cos320/typing.pdf) <br>
+[3] [https://en.wikipedia.org/wiki/Type_inference](https://en.wikipedia.org/wiki/Type_inference) <br>
+[4] [http://cs.au.dk/~mis/typeinf.pdf](http://cs.au.dk/~mis/typeinf.pdf) <br>
