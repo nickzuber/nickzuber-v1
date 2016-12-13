@@ -130,6 +130,8 @@ is little extra work that needs to be done to achieve type safety. With all of
 this in mind, it’s always important to at least consider the possibility of
 incorporating a type system in any project.
 
+---
+
 ## Cited Sources
 
 [1] [https://en.wikipedia.org/wiki/Type_system](https://en.wikipedia.org/wiki/Type_system) <br>
