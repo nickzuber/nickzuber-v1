@@ -379,6 +379,12 @@ a.white {
   display: block;
 }
 
+.-tooltip-small-inline {
+  font-size: 90%;
+  opacity: .75;
+  display: inline;
+}
+
 .leaflet-interactive {
   transition: all 200ms ease-in-out;
 }
