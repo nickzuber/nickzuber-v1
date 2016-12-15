@@ -14,6 +14,8 @@ RAW_ZONE=`date +%z`
 if [[ $1 == "" ]]; then
 	echo "$STAMP Missing argument; don't forget to include the name of the post."
 	echo "$STAMP Aborting process."
+	echo "$STAMP Use case:"
+	echo "$STAMP \`sh ./new_post \"Title of Post\"\`"
 	exit 0
 fi
 
@@ -58,4 +60,3 @@ echo "$STAMP New post draft created successfully!"
 FILE_NAME="$DATE-$TITLE_SLUG"
 
 echo $LAYOUT > "./$FILE_NAME.md"
-
