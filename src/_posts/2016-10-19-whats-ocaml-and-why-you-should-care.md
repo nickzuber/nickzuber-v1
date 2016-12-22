@@ -6,7 +6,7 @@ permalink: blog/whats-ocaml-and-why-you-should-care
 use_math: false
 ---
 
-In a world where there are hundreds of different programming languages<sup>1</sup> to
+In a world where there are hundreds of different programming languages to
 choose from, choosing the correct languages for a project or task can be
 overwhelming and difficult. With this being said, there are certainly different
 flavors of programming languages geared towards solving different types of
@@ -15,7 +15,7 @@ languages called MetaLanguage (or ML as it’s commonly referred to). Within the
 family of MetaLanguage, there exists a uniquely interesting programming
 language called Objective Categorical Abstract Machine Language, which is
 commonly referred to as OCaml. OCaml was invented in 1996 by the Inria
-corporation<sup>2</sup>. This language is primarily an extension of the Caml language
+corporation. This language is primarily an extension of the Caml language
 with the inclusion of some object-oriented design. OCaml’s tool set and
 features are what make it a robust and powerful language to use in modern day
 applications.
@@ -69,7 +69,7 @@ its statically typed system, and its ability to leverage this to help produce
 extremely performant code. The good thing about statically typed languages is
 that they help eliminate type conflicts at compile time rather than at runtime.
 This guarantee of safety ensures that programs are verified before they’re ever
-executed<sup>5</sup>. This feature is particularly helpful because it prevents very
+executed. This feature is particularly helpful because it prevents very
 common human errors that occur when developing a program: conflating an integer
 and pointer, accessing an invalid piece of data, or buffer overflows, just to
 name a few.
@@ -79,9 +79,9 @@ system. Since any type conflicts are resolved at compile time, this eliminates
 any need for type related safety checks at runtime. These kinds of checks are
 necessary for dynamically typed languages, which consequently add a slow
 overhead, therefore slowing down the speed of the program itself. Most
-scripting languages tend to be dynamically typed<sup>6</sup>, so this simple change of
+scripting languages tend to be dynamically typed, so this simple change of
 type system puts OCaml far ahead of its peers with respect to speed. When it
-comes to benchmarking, OCaml is argued to be almost as fast as C<sup>6</sup>, which is
+comes to benchmarking, OCaml is argued to be almost as fast as C, which is
 incredibly impressive and unique considering it is a type safe language.
 
 Not only is OCaml statically typed, but it also has type inference, which is
@@ -98,7 +98,7 @@ In OCaml, however, this isn’t the case due to its unique and revolutionary
 implementation of its type inference algorithm. OCaml has an interesting take
 on the usual approach; its own algorithm is a derivation of the common type
 inference algorithm known as Algorithm W, only OCaml’s interpretation utilizes
-a graph based algorithm<sup>4</sup> which ends up being a much more speed efficient
+a graph based algorithm which ends up being a much more speed efficient
 variation of the traditional approach. The downside to the quick inference
 implementation, is that it can result in strange type errors in more
 complicated programs.
@@ -110,7 +110,7 @@ be categorized into three key parts: signatures, structures, and functors. The
 signature of a module defines what type of data it can be parameterized with,
 where the structure relates to how the body of the module is designed. Functors
 are a very powerful feature in this module system; this is gives developers the
-ability to parameterize a module with _other_ modules<sup>10</sup>. This opens the door
+ability to parameterize a module with _other_ modules. This opens the door
 to all sorts of complex programs; having modules that can be constructed using
 one or more other modules adds layers of abstraction that otherwise wouldn’t be
 achievable in OCaml. A simple use case of functors could be the following:
@@ -129,7 +129,7 @@ OCaml provides an extensive set of tools and libraries when it comes to
 development, one of which being the interactive toplevel interpreter; this
 system is designed in a read-eval-print loop where it repeatedly reads
 expressions from the input, type checks, compiles, evaluates, then prints the
-result<sup>7</sup>. This is similar to how Racket’s interactive toplevel interpreter
+result. This is similar to how Racket’s interactive toplevel interpreter
 works (or Node.js, or most other interactive toplevel interpreters for that
 matter). Having this kind of tool makes the developer’s life very easy when
 they want to just test out some code quickly. The toplevel interpreter is also
@@ -144,10 +144,10 @@ OCaml also provides the developers with a bytecode compiler and a native code
 compiler. Similar to a C compiler, dependency ordering matters when trying to
 link and compile several files. This compiler will build and provide optimized
 executable files that generally run faster than simply interpreting the source
-code, with the native code compiler usually being faster<sup>8</sup>. The main purpose
+code, with the native code compiler usually being faster. The main purpose
 of these compilers is for both portability and efficiency; OCaml is able to
 build your files into very fast executables which, as we’ve mentioned earlier,
-are roughly the same speed as C<sup>6</sup>. There are some third party tools that
+are roughly the same speed as C. There are some third party tools that
 assist the developer in linking dependencies, one of the more popular ones
 being `ocamake`; you feed it your source files and it will link them together
 automatically and the build them into an executable using the bytecode
@@ -158,7 +158,7 @@ different systems.
 Managing packages in OCaml is relatively easy due to the open source package
 manager called OPAM. This package manager supports multiple simultaneous
 compiler installations and also integrates well with a git based development
-workflows<sup>11</sup>. OPAM is a way for engineers to easily install and share any open
+workflows. OPAM is a way for engineers to easily install and share any open
 sourced packages that they create and publish to the OPAM package registry,
 which helps increase the speed of the development process by sharing commonly
 used code. Especially for an emerging language like OCaml, the ability to
@@ -176,26 +176,10 @@ algorithm, leveraging the native code compiler can result in OCaml programs
 turning out to be almost as fast as C programs. With these strong
 characteristics and features, it’s no wonder that OCaml is quickly growing in
 the open source software community; Facebook’s JavaScript static type checker,
-Flow<sup>9</sup>, is written in OCaml and proves to be one of the most revolutionary
+Flow, is written in OCaml and proves to be one of the most revolutionary
 tools a JavaScript developer can use. From using OCaml’s robust tool set and
 speedy execution, this software has quickly become one of the most popular
 static type analyzers in the JavaScript community. All of OCaml’s features and
 benefits cause it to be an incredible language and tool to use in modern day
 applications, and is slowly taking the world by storm as developers realize how
 powerful it is.
-
----
-
-## Cited Sources
-
-<sup>1</sup> [https://dzone.com/articles/big-list-256-programming](https://dzone.com/articles/big-list-256-programming) <br />
-<sup>2</sup> [http://caml.inria.fr/about/history.en.html](http://caml.inria.fr/about/history.en.html) <br />
-<sup>3</sup> [http://www.cs.cornell.edu/Courses/cs3110/2009fa/lectures/lec01.html](http://www.cs.cornell.edu/Courses/cs3110/2009fa/lectures/lec01.html) <br />
-<sup>4</sup> [https://www.cl.cam.ac.uk/teaching/1415/L28/type-inference.pdf](https://www.cl.cam.ac.uk/teaching/1415/L28/type-inference.pdf) <br />
-<sup>5</sup> [https://ocaml.org/learn/description.html](https://ocaml.org/learn/description.html) <br />
-<sup>6</sup> [http://www2.lib.uchicago.edu/keith/ocaml-class/why.html](http://www2.lib.uchicago.edu/keith/ocaml-class/why.html) <br />
-<sup>7</sup> [http://caml.inria.fr/pub/docs/manual-ocaml/toplevel.html](http://caml.inria.fr/pub/docs/manual-ocaml/toplevel.html) <br />
-<sup>8</sup> [https://ocaml.org/learn/tutorials/compiling_ocaml_projects.html](https://ocaml.org/learn/tutorials/compiling_ocaml_projects.html) <br />
-<sup>9</sup> [https://flowtype.org/](https://flowtype.org/) <br />
-<sup>10</sup> [http://mirror.pkill.info/ocaml-tutorial.org/modules.html](http://mirror.pkill.info/ocaml-tutorial.org/modules.html) <br />
-<sup>11</sup> [https://opam.ocaml.org/](https://opam.ocaml.org/) <br />

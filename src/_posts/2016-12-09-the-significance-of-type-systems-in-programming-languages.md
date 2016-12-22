@@ -13,7 +13,7 @@ problem of human error, integrating type systems into a programming language
 can be a powerful way to go. Type systems introduce the concept of assigning
 types to different constructs within a program such as variables, functions,
 and expressions, and enforce consistency among the rules associated with each
-type [1]. A type can be understood as just a classification of data which has an
+type. A type can be understood as just a classification of data which has an
 interface associated with it that describes how it is intended to be used. With
 a type system, the program is able to avoid type related errors, such as
 performing an operation on a type that does not support that operation. While
@@ -35,7 +35,7 @@ to what the program is doing and how it’s doing it.
 
 One of the primary advantages to having a type system is the elimination of
 type errors before any program runs. A type system will analyze the code during
-the compilation process and flag any type related errors that it finds [2].
+the compilation process and flag any type related errors that it finds.
 This makes it so any code that makes it through the type checking process and
 gets run is type safe. The entire process of type checking a program before it
 runs is to mitigate human errors that are written into the code during the
@@ -62,7 +62,7 @@ there are drawbacks and other tradeoffs that need to be considered. One of the
 more prominent downsides to a type system is that it can reject some correct
 programs. It’s not uncommon to encounter a program that works as intended and
 is objectively correct in the sense of how it should run and perform, but still
-have a type system reject and find errors within it [2]. This has to do with
+have a type system reject and find errors within it. This has to do with
 how type systems are traditionally implemented; there are many different types
 of shortcuts a type system has to implement in order to perform efficiently
 enough to be worthwhile to use. For example, when analyzing _if_ statement, if
@@ -94,7 +94,7 @@ how its traditionally implemented in ML. Firstly, types of bindings are
 generally determined in the order in which they appear, which is why it’s
 important to write any functions or methods before the functions that use them;
 without doing so, the inferred types will not be in the environment by the time
-they are needed and the system will simply throw a type error [3]. When a
+they are needed and the system will simply throw a type error. When a
 binding is being inferred, all of the relevant definitions and facts are
 analyzed and used to determine what the type can possibly be; for example, if
 some variable _x_ is used with the addition operator on some number, it can be
@@ -106,7 +106,7 @@ Even after this inference analysis process, it is still possible for an
 expression or variable to still not have enough constraints associated to it
 for the type checker to determine its type. In this situation, it’s common to
 assign this expression or variable a polymorphic type by giving it a fresh and
-arbitrary type [4]. This new type generally implies that it can hold any type
+arbitrary type. This new type generally implies that it can hold any type
 value; this is commonly seen when a function parameter is never used within the
 function, therefore it’s clear that this can be anything and has no constraints
 associated with it. Type inference is a useful tool when implemented well; it
@@ -117,7 +117,7 @@ expression or variable is inferred with the wrong type, errors can occur well
 past the actual spot that is causing the error, which can lead to strange and
 unhelpful bugs.
 
-## Conclusion
+## In Closing
 
 Type systems can be a very powerful and useful asset to any programming
 language under the right circumstances. It’s always important to weigh the
@@ -129,12 +129,3 @@ beneficial without any added work of manually adding type annotations, so there
 is little extra work that needs to be done to achieve type safety. With all of
 this in mind, it’s always important to at least consider the possibility of
 incorporating a type system in any project.
-
----
-
-## Cited Sources
-
-[1] [https://en.wikipedia.org/wiki/Type_system](https://en.wikipedia.org/wiki/Type_system) <br>
-[2] [https://www.cs.princeton.edu/courses/archive/spring12/cos320/typing.pdf](https://www.cs.princeton.edu/courses/archive/spring12/cos320/typing.pdf) <br>
-[3] [https://en.wikipedia.org/wiki/Type_inference](https://en.wikipedia.org/wiki/Type_inference) <br>
-[4] [http://cs.au.dk/~mis/typeinf.pdf](http://cs.au.dk/~mis/typeinf.pdf) <br>
