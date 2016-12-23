@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bold='\033[1;32m'
+bold='\033[0;31m'
 reset='\033[0m'
 stamp=$bold[$(date +"%T")]$reset
 cur_date=`date +%Y-%m-%d`

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BOLD='\033[1;32m'
+BOLD='\033[0;31m'
 NC='\033[0m'
 
 STAMP=$BOLD[$(date +"%T")]$NC
