@@ -1,6 +1,8 @@
 #!/bin/bash
 
-bold='\033[0;31m'
+bold='\033[0;33m'
+green='\033[0;32m'
+red='\033[0;31m'
 reset='\033[0m'
 stamp=$bold[$(date +"%T")]$reset
 cur_date=`date +%Y-%m-%d`
@@ -35,7 +37,7 @@ if [[ $response =~ $find_packages ]]; then
     fi
   done
 else
-  echo "$stamp ERROR: Unable to find any packages from response."
+  echo "$stamp$red Error: Unable to find any packages from response. Probably no internet connection.$reset"
   exit 1
 fi
 
@@ -47,4 +49,4 @@ eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $total_download_count/' _conf
 echo "$stamp Updating production config files."
 eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $total_download_count/' _config_dev.yml"
 
-echo "$stamp Finished!"
+echo "$stamp$green Successfully update the download stats!$reset"
