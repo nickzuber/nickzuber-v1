@@ -41,7 +41,7 @@ else
   exit 1
 fi
 
-echo "$stamp Counted $total_download_count downloads from $count packages."
+echo "$stamp Counted $green$total_download_count$reset downloads from $count packages."
 
 echo "$stamp Updating development config file."
 eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $total_download_count/' _config.yml"
