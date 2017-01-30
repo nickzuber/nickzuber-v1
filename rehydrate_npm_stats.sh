@@ -1,10 +1,10 @@
 #!/bin/bash
 
-bold='\033[0;33m'
+bold='\033[90m'
 green='\033[0;32m'
 red='\033[0;31m'
 reset='\033[0m'
-stamp=$bold[$(date +"%T")]$reset
+stamp=[$bold$(date +"%T")$reset]
 cur_date=`date +%Y-%m-%d`
 
 find_packages='<ul class="bullet-free collaborated-packages">(.*)<ul class="bullet-free starred-packages">'
