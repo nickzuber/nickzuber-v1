@@ -13,9 +13,12 @@ full_name: Nick Zuber
 
 npm_stats: 10181
 
-job_title: Software Engineer
-job_segue: studying
-job_place: JavaScript
+job_title: Software Engineer Intern
+job_segue: at
+job_place: Box
+
+# job_segue: studying
+# job_place: JavaScript
 
 permalink: /:categories/:title
 
