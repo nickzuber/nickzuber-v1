@@ -13,9 +13,12 @@ full_name: Nick Zuber
 
 npm_stats: 11331
 
-job_title: Software Engineer Intern
+job_title: Software Engineering Intern
 job_segue: at
 job_place: Box
+
+# job_segue: studying
+# job_place: JavaScript
 
 permalink: /:categories/:title
 
@@ -31,6 +34,7 @@ sass:
   style: :compressed
 
 # FOR DEV WE EXCLUDE POSTS TO SPEED UP COMPILE TIME
+# OBVIOUSLY DON'T EXCLUDE POSTS IF YOU'RE TRYING TO WRITE A POST
 exclude:
 - node_modules
 - package.json
