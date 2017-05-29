@@ -39,4 +39,4 @@ exclude:
 - node_modules
 - package.json
 - _drafts
-- _posts
+# - _posts
