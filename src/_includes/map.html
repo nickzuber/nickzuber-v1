@@ -1,5 +1,4 @@
 <script>
-
   const centerUSAFocus = {
     zoomSnap: 0.1,
     zoom: 4,
@@ -23,18 +22,11 @@
 
   const screenWidth = window.outerWidth;
 
-  /**
-   * Create map object.
-   * The `775px` is just how wide the screen can be to fit all of the markers.
-   */
-
+  // Create map object.
+  // The `775px` is just how wide the screen can be to fit all of the markers.
   const map = L.map('loc_map', screenWidth <= 775
                                 ? centerCaliforniaFocus
                                 : centerUSAFocus);
-
-  /**
-   * Helper functions.
-   */
 
   function createNewLocationMarker (longLat, direction, name, city, date) {
     return L.circleMarker(longLat, {
@@ -66,10 +58,7 @@
       });
   }
 
-  /**
-   * Tile Layer
-   */
-
+  // Tile Layer
   L.tileLayer('https://api.mapbox.com/styles/v1/nickzuber/ciwefbg41002e2qofpbjddgap/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibmlja3p1YmVyIiwiYSI6ImNpd2VmNm8zZjBhdjUyb3Rka2RoNjcwenMifQ.qDwVejU1onQUFAFcQ_wvgg', {
     maxZoom: 15,
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
