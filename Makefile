@@ -6,3 +6,4 @@ restart:
 	nginx -t && service nginx restart
 npm:
 	sh ./rehydrate_npm_stats.sh
+
