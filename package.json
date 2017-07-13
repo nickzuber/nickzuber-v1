@@ -1,7 +1,7 @@
 {
   "name": "nickzuber.com",
   "version": "1.0.0",
-  "description": "Personal website.",
+  "description": "Personal website",
   "main": "index.js",
   "scripts": {
     "dev": "jekyll serve --config _config_dev.yml"
