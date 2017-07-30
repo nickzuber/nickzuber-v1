@@ -5,9 +5,7 @@ email: zuber.nicholas@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Nick Zuber is a sofware engineer for the web and mobile applications based out of the Boston area.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://nickzuber.github.io"
-github:
-  url: "https://nickzuber.com"
+url: "https://nickzuber.com"
 
 twitter_username: nick_zuber
 github_username:  nickzuber
