@@ -32,7 +32,7 @@ gems:
 
 sass:
   style: :compressed
-  sass_dir: _sass
+  sass_dir: ../_sass
 
 exclude:
 - node_modules
