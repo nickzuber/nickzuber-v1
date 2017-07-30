@@ -1,0 +1,31 @@
+<script>
+  !function(t,n){function e(){if(!a){a=!0;for(var t=0;t<d.length;t++)d[t].fn.call(window,d[t].ctx);d=[]}}function o(){"complete"===document.readyState&&e()}t=t||"docReady",n=n||window;var d=[],a=!1,c=!1;n[t]=function(t,n){return a?void setTimeout(function(){t(n)},1):(d.push({fn:t,ctx:n}),void("complete"===document.readyState?setTimeout(e,1):c||(document.addEventListener?(document.addEventListener("DOMContentLoaded",e,!1),window.addEventListener("load",e,!1)):(document.attachEvent("onreadystatechange",o),window.attachEvent("onload",e)),c=!0)))}}("onReady",window);
+  onReady(function(){
+    var generateInfinateOrb = function() {
+      var node = document.createElement('div');
+      node.classList = 'pulse-orb -emitting';
+      document.querySelector('.primary-image').appendChild(node);
+    }
+    var generateSingleOrb = function() {
+      var node = document.createElement('div');
+      node.classList = 'pulse-orb -single-emit';
+      document.querySelector('.primary-image').appendChild(node);
+    }
+    var startEmitting = function(){
+      generateInfinateOrb();
+      setTimeout(function(){
+        generateInfinateOrb();
+      }, 2000);
+    };
+    window.emitting = false;
+    document.querySelector('.primary-image').addEventListener('click', function() {
+      if (!window.emitting) {
+        document.querySelector('.primary-image').style.boxShadow = 'none';
+        startEmitting();
+        window.emitting = true;
+      } else {
+        generateSingleOrb();
+      }
+    });
+  });
+</script>

@@ -7,3 +7,4 @@ npm-debug.log
 _site
 public
 .sass-cache
+.jekyll-metadata
