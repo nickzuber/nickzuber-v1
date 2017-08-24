@@ -3,6 +3,7 @@
 ---
 @charset "utf-8";
 @import 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600';
+@import url('https://rsms.me/interface/interface.css');
 
 // Mystery .highlight ruining my life, gonna overwrite here
 .highlight {
@@ -67,7 +68,7 @@
 }
 
 // Core variables
-$base-font-style:  15px/1 BlinkMacSystemFont, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+$base-font-style:  15px/1 Interface, BlinkMacSystemFont, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 $small-font-size:  13px;
 $base-font-weight: 300;
 $base-line-height: 21px;
