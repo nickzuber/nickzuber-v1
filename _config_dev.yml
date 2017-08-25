@@ -24,7 +24,6 @@ permalink: /:categories/:title
 
 # Build settings
 markdown: kramdown
-source: src
 destination: public
 
 gems:
