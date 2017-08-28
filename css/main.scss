@@ -237,6 +237,7 @@ body {
 .typed-lite-cursor{
 	color: #a5aaad;
   font-weight: 100;
+  font-size: 24px;
   opacity: 1;
   -webkit-animation: blink 0.7s infinite;
   -moz-animation: blink 0.7s infinite;
@@ -928,7 +929,7 @@ a.white {
  */
 
 #loc_map {
-  margin-top: -20px;
+  margin-top: 50px;
   height: 400px;
   width: 100%;
   background: #eee;

@@ -13,12 +13,15 @@ full_name: Nick Zuber
 
 npm_stats: 12531
 
-job_title: Software Engineering Intern
-job_segue: at
-job_place: Box
+job_title: Software Engineer
 
-# job_segue: studying
-# job_place: JavaScript
+### When you are working with a company
+# job_segue: at
+# job_place: Box
+
+### When you're at school & not working
+job_segue: studying
+job_place: OCaml
 
 permalink: /:categories/:title
 
