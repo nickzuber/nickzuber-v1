@@ -239,11 +239,11 @@ body {
   font-weight: 100;
   font-size: 24px;
   opacity: 1;
-  -webkit-animation: blink 0.7s infinite;
-  -moz-animation: blink 0.7s infinite;
-  -ms-animation: blink 0.7s infinite;
-  -o-animation: blink 0.7s infinite;
-  animation: blink 0.7s infinite;
+  -webkit-animation: blink 0.85s infinite;
+  -moz-animation: blink 0.85s infinite;
+  -ms-animation: blink 0.85s infinite;
+  -o-animation: blink 0.85s infinite;
+  animation: blink 0.85s infinite;
 }
 @keyframes blink{
   0% { opacity:1; }
@@ -757,7 +757,7 @@ a.white {
   letter-spacing: -0.5px;
 
   .place {
-    color: $box-blue;
+    color: $contrast-color;
     font-weight: 500;
   }
 }
