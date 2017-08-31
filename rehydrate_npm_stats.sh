@@ -48,14 +48,9 @@ else
   exit 1
 fi
 
-# if [[ $total_download_count <  ]]
-
 echo "$stamp Counted $green$total_download_count$reset downloads from $count packages."
 
 echo "$stamp Updating development config file."
 eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $total_download_count/' _config.yml"
-
-echo "$stamp Updating production config files."
-eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $total_download_count/' _config_dev.yml"
 
 echo "$stamp$green Successfully update the download stats!$reset"
