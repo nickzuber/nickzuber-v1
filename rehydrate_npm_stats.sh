@@ -27,15 +27,15 @@ if [[ $response =~ $find_packages ]]; then
   echo "$stamp Found the following packages:"
   for word in ${BASH_REMATCH[1]}; do
     if [[ $word =~ $find_link ]]; then
-			sleep 1
-			package_name=${BASH_REMATCH[2]}
-			package_count=0
+      sleep 
+      package_name=${BASH_REMATCH[2]}
+      package_count=0
       package_data=$(curl --silent https://api.npmjs.org/downloads/range/2015-11-12:$cur_date/${BASH_REMATCH[2]} \
                 | sed -e 's/[{}]/''/g' \
                 | awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}')
       for data in $package_data; do
         if [[ $data =~ $download_count ]]; then
-					package_count=$(( package_count + ${BASH_REMATCH[1]} ))
+          package_count=$(( package_count + ${BASH_REMATCH[1]} ))
           total_download_count=$(( total_download_count + ${BASH_REMATCH[1]} ))
         fi
       done
