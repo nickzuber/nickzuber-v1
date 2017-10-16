@@ -54,3 +54,4 @@ echo "$stamp Updating development config file."
 eval "sed -i '' -e 's/npm_stats: [0-9]*/npm_stats: $total_download_count/' _config.yml"
 
 echo "$stamp$green Successfully update the download stats!$reset"
+
