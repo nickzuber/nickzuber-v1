@@ -1010,7 +1010,11 @@ a.white {
     font-size: 30px;
     font-weight: 500;
     letter-spacing: -0.5px;
-	}
+  }
+  h3, h4, h5, h6 {
+    font-weight: 500;
+    color: $dark-navy;
+  }
 
 	ul {
     margin-left: 40px;
