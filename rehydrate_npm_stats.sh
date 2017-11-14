@@ -27,7 +27,7 @@ if [[ $response =~ $find_packages ]]; then
   echo "$stamp Found the following packages:"
   for word in ${BASH_REMATCH[1]}; do
     if [[ $word =~ $find_link ]]; then
-      sleep 
+      sleep 2
       package_name=${BASH_REMATCH[2]}
       package_count=0
       package_data=$(curl --silent https://api.npmjs.org/downloads/range/2015-11-12:$cur_date/${BASH_REMATCH[2]} \
