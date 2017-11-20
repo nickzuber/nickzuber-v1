@@ -563,6 +563,108 @@ pre {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// WORK
+
+
+.timeline-wrapper {
+  display: table-row;
+}
+
+.timeline-content, .timeline-dot-wrapper {
+  display: table-cell;
+  vertical-align: top;
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 15px !important;
+    line-height: 23px !important;
+    padding-top: 5px !important;
+  }
+}
+
+.timeline-dot {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background: $red;
+  border-radius: 100%;
+  margin: 30px;
+  margin-top: 5px;
+}
+
+.timeline-date {
+  margin-top: -13px;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  opacity: .5;
+}
+
+.timeline-line {
+  position: relative;
+  height: 85px;
+  width: 5px;
+  background: $border-gray;
+  margin-left: 25 + 15 - (5 / 2) + px;
+  border-radius: 20px;
+}
+
+.timeline-spacing {
+  height: 20px;
+}
+
+
+
+
+
+// depricated //
+.timeline-dot-shadow {
+  position: absolute;
+  top: 0;
+  height: 30px;
+  width: 30px;
+  background: transparent;
+  border-radius: 100%;
+  margin: 25px;
+}
+
+.-pulsing-dot {
+  animation-name: pulsingdot;
+  -webkit-animation-name: pulsingdot;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@keyframes pulsingdot {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 $red, 0 0 0 0 $dark-red;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 40px $light-red, 0 0 0 44px $dark-red;
+  }
+}
+@-webkit-keyframes pulsingdot {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 $red, 0 0 0 0 $dark-red;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0 40px $light-red, 0 0 0 44px $dark-red;
+  }
+}
 
 
 // @import 'layout';
