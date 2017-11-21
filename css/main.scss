@@ -576,7 +576,7 @@ pre {
 
   h3 {
     font-size: 20px;
-    line-height: 22px;
+    line-height: 24px;
     margin-bottom: 20px;
   }
 
@@ -591,10 +591,11 @@ pre {
   position: relative;
   height: 20px;
   width: 20px;
-  background: $red;
+  background: transparent;
+  border: 2px dashed $red;
   border-radius: 100%;
   margin: 30px;
-  margin-top: 5px;
+  margin-top: 1px;
 }
 
 .timeline-date {
@@ -608,12 +609,21 @@ pre {
 
 .timeline-line {
   position: absolute;
-  top: 50px;
+  top: 40px;
   bottom: 0px;
   width: 5px;
   background: $border-gray;
   margin-left: 25 + 15 - (5 / 2) + px;
   border-radius: 20px;
+}
+
+@media (max-width: 560px) {
+  .timeline-emdash {
+    display: none;
+  }
+  .timeline-content h3 a {
+    display: block;
+  }
 }
 
 .timeline-spacing {
