@@ -812,10 +812,11 @@ a.white {
 }
 
 .primary-image {
-	background: url(../img/profile.jpg) 0% 0% no-repeat;
-	box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
-	/* background: url(../img/profile.jpg) 50% 0% no-repeat; */
-  background-size: 110%;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  background: url(../img/profile2.jpg) 58% 30% no-repeat;
+	// background: url(../img/profile.jpg) 0% 0% no-repeat;   // 110%
+	// background: url(../img/profile.jpg) 50% 0% no-repeat;  // 110%
+  background-size: 150%;
   border-width: 0px;
   border-style: solid;
   border-top-color: $theme-red;
