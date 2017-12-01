@@ -17,7 +17,7 @@ permalink: /blog/
             {% endfor %}
             <div class="post-icon-me"></div>
             <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-              <span class="post-author" itemprop="name">{{ post.author }}, {{ site.job_title }} — {{ post.date | date: "%-m/%-d/%Y" }}</span>
+              <span class="post-author" itemprop="name">{{ post.author }} — {{ post.date | date: "%-m/%-d/%Y" }}</span>
             </span>
           </div>
           {% if post.excerpt %}
