@@ -4,6 +4,9 @@ title: "Practical Parsing of Programming Languages and Applications in Automata 
 date: 2017-10-23 21:11:37 -0400
 permalink: blog/practical-parsing-of-programming-languages-and-applications-in-automata-theory
 use_math: true
+author: Nick Zuber
+tags:
+ - paper
 ---
 
 In the ever evolving world of software engineering, the ability to write programs that solve a variety of different kinds of problems we encounter on a day to day basis is paramount. However, having a system or tool in place that is capable of understanding and interpreting these programs is even more important. Through the use of programming languages, we're able to define a standard way to design certain programs. Using the formal grammar that these languages provide, we're able to parse any program written in one of these languages and transform it into a more structural, and usually meaningful, representation of the program.

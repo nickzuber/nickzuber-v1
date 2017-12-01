@@ -4,6 +4,9 @@ title: "What's OCaml and Why You Should Care"
 date: 2016-10-19 20:53:40 -0400
 permalink: blog/whats-ocaml-and-why-you-should-care
 use_math: false
+author: Nick Zuber
+tags:
+ - language
 ---
 
 In a world where there are hundreds of different programming languages to

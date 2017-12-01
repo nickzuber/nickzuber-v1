@@ -4,6 +4,10 @@ title: "Taking a Shallow Dive into JavaScript"
 date: 2016-12-15 13:22:51 -0500
 permalink: blog/taking-a-shallow-dive-into-javascript
 use_math: true
+author: Nick Zuber
+tags:
+ - paper
+ - language
 ---
 
 When it comes to choosing a primary programming language for a project or

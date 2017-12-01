@@ -4,6 +4,10 @@ title: "Continuations and Their Role In JavaScript"
 date: 2016-12-22 13:34:08 -0500
 permalink: blog/continuations-and-their-role-in-javascript
 use_math: true
+author: Nick Zuber
+tags:
+ - paper
+ - language
 ---
 
 By definition, a computer program is a collection of instructions that are

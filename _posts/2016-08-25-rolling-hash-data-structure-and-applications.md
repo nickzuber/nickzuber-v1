@@ -1,9 +1,13 @@
 ---
 layout: post
-title: "Rolling Hash Data Structure and Applications"
+title: "Rolling hash data structure and applications"
 date: 2016-08-25 00:19:09 -0400
 permalink: blog/rolling-hash-data-structure-and-applications
 use_math: true
+author: Nick Zuber
+tags:
+ - algorithm
+ - note
 ---
 
 Let's say you were given a massive text document and were allotted the task of finding a particular sentence somewhere inside it. This sentence may or may not actually _exist_ inside of this document, but it's your job to try and find it anyways.

@@ -4,6 +4,10 @@ title: "Automated Memory Management Systems with Garbage Collection"
 date: 2016-11-02 19:34:57 -0400
 permalink: blog/automated-memory-management-systems-with-garbage-collection
 use_math: true
+author: Nick Zuber
+tags:
+ - paper
+ - os
 ---
 
 When creating any type of program or application, the developer almost always
