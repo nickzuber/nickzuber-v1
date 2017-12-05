@@ -7,7 +7,7 @@ use_math: true
 author: Nick Zuber
 tags:
  - paper
- - os
+ - OS
 ---
 
 When creating any type of program or application, the developer almost always
