@@ -7,7 +7,7 @@
 # 	nginx -t && service nginx restart
 
 npm:
-	@echo "*** This script seems to be broken -- it doesn't correctly count the downloads. ***"
+	@echo "*** This script is to be broken -- it doesn't correctly count the downloads. ***"
 	exit 1
 	sh ./rehydrate_npm_stats.sh
 
