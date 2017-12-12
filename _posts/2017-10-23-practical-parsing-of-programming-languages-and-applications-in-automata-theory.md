@@ -7,6 +7,7 @@ use_math: true
 author: Nick Zuber
 tags:
  - paper
+ - compiler
 ---
 
 In the ever evolving world of software engineering, the ability to write programs that solve a variety of different kinds of problems we encounter on a day to day basis is paramount. However, having a system or tool in place that is capable of understanding and interpreting these programs is even more important. Through the use of programming languages, we're able to define a standard way to design certain programs. Using the formal grammar that these languages provide, we're able to parse any program written in one of these languages and transform it into a more structural, and usually meaningful, representation of the program.
