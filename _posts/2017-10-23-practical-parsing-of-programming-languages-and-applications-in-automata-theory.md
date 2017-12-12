@@ -3,7 +3,7 @@ layout: post
 title: "Practical Parsing of Programming Languages and Applications in Automata Theory"
 date: 2017-10-23 21:11:37 -0400
 permalink: blog/practical-parsing-of-programming-languages-and-applications-in-automata-theory
-use_math: true
+use_math: false
 author: Nick Zuber
 tags:
  - paper
